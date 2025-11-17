@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import heroImage from "@/assets/hero-cafe.jpg";
 import elegantBg from "@/assets/elegant-background.jpg";
+import homeBgVid from "@/assets/home_bg.mp4";
 
 const Index = () => {
   const features = [
@@ -44,7 +45,7 @@ const Index = () => {
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
           <source
-            src="https://www.instagram.com/reel/DPv3hB0CP3m/?utm_source=ig_embed&amp;utm_campaign=loading"
+            src=homeBgVid
             type="video/mp4"
           />
         </video>
