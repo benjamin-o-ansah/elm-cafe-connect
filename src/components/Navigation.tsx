@@ -10,6 +10,10 @@ const Navigation = () => {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Menu", path: "/menu" },
+    { name: "Reservations", path: "/reservations" },
+    { name: "Promotions", path: "/promotions" },
+    { name: "Gift Cards", path: "/gift-cards" },
+    { name: "Gallery", path: "/gallery" },
     { name: "About", path: "/about" },
     { name: "Contact", path: "/contact" },
   ];
