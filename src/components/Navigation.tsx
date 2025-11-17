@@ -68,7 +68,7 @@ const Navigation = () => {
         <div
           className={cn(
             "lg:hidden overflow-hidden transition-all duration-300",
-            isOpen ? "max-h-[600px] pb-4 overflow-y-scroll" : "max-h-0",
+            isOpen ? "max-h-[800px] pb-4 overflow-y-scroll" : "max-h-0",
           )}
         >
           <div className="flex flex-col gap-4 pt-4">
