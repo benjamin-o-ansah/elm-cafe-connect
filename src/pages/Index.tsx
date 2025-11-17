@@ -34,27 +34,23 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background relative">
-      <div 
+      <div
         className="fixed inset-0 opacity-5 pointer-events-none"
-        style={{ backgroundImage: `url(${elegantBg})`, backgroundSize: 'cover', backgroundAttachment: 'fixed' }}
+        style={{ backgroundImage: `url(${elegantBg})`, backgroundSize: "cover", backgroundAttachment: "fixed" }}
       />
       <Navigation />
-      
+
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${heroImage})`,
-          }}
-        >
+        <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
+          <source src="https://www.instagram.com/reel/DPv3hB0CP3m/?igsh=MW92NGl1d2pyd2ZlbQ==" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-cover bg-center">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70" />
         </div>
-        
+
         <div className="relative z-10 container mx-auto px-4 text-center animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6">
-            Welcome to Elm CafeGh
-          </h1>
+          <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6">Welcome to Elm CafeGh</h1>
           <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
             Experience the perfect blend of quality, sustainability, and local flavors in the heart of Accra
           </p>
@@ -65,7 +61,11 @@ const Index = () => {
               </Button>
             </Link>
             <Link to="/signup">
-              <Button size="lg" variant="outline" className="bg-background/10 backdrop-blur-sm text-primary-foreground border-primary-foreground hover:bg-background/20 text-lg px-8">
+              <Button
+                size="lg"
+                variant="outline"
+                className="bg-background/10 backdrop-blur-sm text-primary-foreground border-primary-foreground hover:bg-background/20 text-lg px-8"
+              >
                 Order Now
               </Button>
             </Link>
