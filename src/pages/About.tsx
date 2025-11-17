@@ -2,6 +2,9 @@ import { Heart, Leaf, Users, Award } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import AIChatbot from "@/components/AIChatbot";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import aboutHero from "@/assets/about-hero.jpg";
 
 const About = () => {
   const values = [
@@ -32,13 +35,19 @@ const About = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center animate-fade-in">
-          <h1 className="text-5xl md:text-6xl font-bold text-primary mb-6">About Elm CafeGh</h1>
-          <p className="text-xl text-muted-foreground leading-relaxed">
-            More than just a cafe - we're a community hub dedicated to redefining the dining experience
-            in Accra through quality, sustainability, and genuine hospitality.
-          </p>
+      <section 
+        className="pt-32 pb-16 relative bg-cover bg-center"
+        style={{ backgroundImage: `url(${aboutHero})` }}
+      >
+        <div className="absolute inset-0 bg-primary/70" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-3xl mx-auto text-center animate-fade-in">
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">About Elm CafeGh</h1>
+            <p className="text-xl text-white/90 leading-relaxed">
+              More than just a cafe - we're a community hub dedicated to redefining the dining experience
+              in Accra through quality, sustainability, and genuine hospitality.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -107,6 +116,8 @@ const About = () => {
       </section>
 
       <Footer />
+      <AIChatbot />
+      <WhatsAppButton />
     </div>
   );
 };

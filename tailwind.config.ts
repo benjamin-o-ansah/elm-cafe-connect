@@ -110,6 +110,16 @@ export default {
             opacity: "1"
           }
         },
+        "fly-in-right": {
+          "0%": {
+            transform: "translateX(100%) scale(0.8)",
+            opacity: "0"
+          },
+          "100%": {
+            transform: "translateX(0) scale(1)",
+            opacity: "1"
+          }
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -117,6 +127,7 @@ export default {
         "fade-in": "fade-in 0.6s ease-out",
         "fade-in-up": "fade-in-up 0.8s ease-out",
         "scale-in": "scale-in 0.5s ease-out",
+        "fly-in-right": "fly-in-right 1s ease-out forwards",
       },
     },
   },

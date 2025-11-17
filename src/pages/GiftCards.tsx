@@ -9,7 +9,9 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import StepsGuide from "@/components/StepsGuide";
-import elegantBg from "@/assets/elegant-background.jpg";
+import AIChatbot from "@/components/AIChatbot";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import giftCardHero from "@/assets/gift-card-hero.jpg";
 
 const GiftCards = () => {
   const [selectedAmount, setSelectedAmount] = useState<number | null>(null);
@@ -24,20 +26,22 @@ const GiftCards = () => {
 
   return (
     <div className="min-h-screen bg-background relative">
-      <div 
-        className="fixed inset-0 opacity-5 pointer-events-none"
-        style={{ backgroundImage: `url(${elegantBg})`, backgroundSize: 'cover', backgroundAttachment: 'fixed' }}
-      />
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 container mx-auto px-4 relative z-10">
-        <div className="max-w-3xl mx-auto text-center animate-fade-in">
-          <Gift className="h-16 w-16 text-accent mx-auto mb-6 animate-pulse" />
-          <h1 className="text-5xl md:text-6xl font-bold text-primary mb-6">Gift Cards & Vouchers</h1>
-          <p className="text-xl text-muted-foreground">
-            Share the joy of exceptional dining with your loved ones
-          </p>
+      <section 
+        className="pt-32 pb-16 relative bg-cover bg-center"
+        style={{ backgroundImage: `url(${giftCardHero})` }}
+      >
+        <div className="absolute inset-0 bg-primary/70" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-3xl mx-auto text-center animate-fade-in">
+            <Gift className="h-16 w-16 text-white mx-auto mb-6 animate-pulse" />
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">Gift Cards & Vouchers</h1>
+            <p className="text-xl text-white/90">
+              Share the joy of exceptional dining with your loved ones
+            </p>
+          </div>
         </div>
       </section>
 
@@ -262,6 +266,8 @@ const GiftCards = () => {
 
       <Newsletter />
       <Footer />
+      <AIChatbot />
+      <WhatsAppButton />
     </div>
   );
 };

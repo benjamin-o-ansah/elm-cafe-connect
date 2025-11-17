@@ -18,6 +18,7 @@ const Navigation = () => {
     { name: "Chef's Corner", path: "/chefs-corner" },
     { name: "Blog", path: "/blog" },
     { name: "Events", path: "/events" },
+    { name: "Loyalty & Reviews", path: "/loyalty" },
     { name: "About", path: "/about" },
     { name: "Contact", path: "/contact" },
   ];
