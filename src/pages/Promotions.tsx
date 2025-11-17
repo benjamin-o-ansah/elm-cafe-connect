@@ -4,7 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Percent, Gift, Clock, Coffee, Utensils, Sparkles } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import Newsletter from "@/components/Newsletter";
 import promoBanner from "@/assets/promo-banner.jpg";
+import elegantBg from "@/assets/elegant-background.jpg";
 
 const Promotions = () => {
   const currentPromotions = [
@@ -72,7 +74,11 @@ const Promotions = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      <div 
+        className="fixed inset-0 opacity-5 pointer-events-none"
+        style={{ backgroundImage: `url(${elegantBg})`, backgroundSize: 'cover', backgroundAttachment: 'fixed' }}
+      />
       <Navigation />
 
       {/* Hero Section */}

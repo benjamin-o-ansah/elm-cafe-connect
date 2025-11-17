@@ -5,20 +5,25 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import Newsletter from "@/components/Newsletter";
+import elegantBg from "@/assets/elegant-background.jpg";
 
 const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
     alert("Thank you for your message! We'll get back to you soon.");
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      <div 
+        className="fixed inset-0 opacity-5 pointer-events-none"
+        style={{ backgroundImage: `url(${elegantBg})`, backgroundSize: 'cover', backgroundAttachment: 'fixed' }}
+      />
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 container mx-auto px-4">
+      <section className="pt-32 pb-16 container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center animate-fade-in">
           <h1 className="text-5xl md:text-6xl font-bold text-primary mb-6">Get in Touch</h1>
           <p className="text-xl text-muted-foreground">
@@ -28,7 +33,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Cards */}
-      <section className="pb-16 container mx-auto px-4">
+      <section className="pb-16 container mx-auto px-4 relative z-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           <Card className="hover:shadow-lg transition-shadow">
             <CardContent className="pt-6 text-center">
@@ -79,39 +84,69 @@ const Contact = () => {
           </Card>
         </div>
 
+        {/* Location Maps */}
+        <div className="grid md:grid-cols-2 gap-8 mb-16">
+          <Card>
+            <CardContent className="pt-6">
+              <h3 className="text-xl font-bold text-primary mb-4">Embassy Gardens Location</h3>
+              <div className="aspect-video rounded-lg overflow-hidden">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.8364057282243!2d-0.1870472!3d5.5893407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMzUnMjEuNiJOIDDCsDExJzEzLjQiVw!5e0!3m2!1sen!2sgh!4v1234567890"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Embassy Gardens Location"
+                ></iframe>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="pt-6">
+              <h3 className="text-xl font-bold text-primary mb-4">The Lennox Location</h3>
+              <div className="aspect-video rounded-lg overflow-hidden">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.7234567890123!2d-0.1870472!3d5.6123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMzYnNDQuNCJOIDDCsDExJzEzLjQiVw!5e0!3m2!1sen!2sgh!4v1234567890"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="The Lennox Location"
+                ></iframe>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
         {/* Contact Form */}
         <div className="max-w-2xl mx-auto">
           <Card>
             <CardContent className="pt-6">
-              <h2 className="text-2xl font-bold text-primary mb-6">Send Us a Message</h2>
+              <h2 className="text-2xl font-bold text-primary mb-6 text-center">Send Us a Message</h2>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                      Name
-                    </label>
-                    <Input id="name" placeholder="Your name" required />
+                    <label className="text-sm font-medium text-foreground mb-2 block">Name</label>
+                    <Input placeholder="Your name" required />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                      Email
-                    </label>
-                    <Input id="email" type="email" placeholder="your@email.com" required />
+                    <label className="text-sm font-medium text-foreground mb-2 block">Email</label>
+                    <Input type="email" placeholder="your@email.com" required />
                   </div>
                 </div>
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
-                    Subject
-                  </label>
-                  <Input id="subject" placeholder="What is this about?" required />
+                  <label className="text-sm font-medium text-foreground mb-2 block">Subject</label>
+                  <Input placeholder="How can we help?" required />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                    Message
-                  </label>
+                  <label className="text-sm font-medium text-foreground mb-2 block">Message</label>
                   <Textarea
-                    id="message"
-                    placeholder="Tell us how we can help you..."
+                    placeholder="Tell us more..."
                     className="min-h-[150px]"
                     required
                   />
@@ -126,6 +161,7 @@ const Contact = () => {
         </div>
       </section>
 
+      <Newsletter />
       <Footer />
     </div>
   );

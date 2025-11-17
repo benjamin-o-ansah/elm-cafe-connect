@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, Coffee } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/elm-cafe-logo.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,6 +15,9 @@ const Navigation = () => {
     { name: "Promotions", path: "/promotions" },
     { name: "Gift Cards", path: "/gift-cards" },
     { name: "Gallery", path: "/gallery" },
+    { name: "Chef's Corner", path: "/chefs-corner" },
+    { name: "Blog", path: "/blog" },
+    { name: "Events", path: "/events" },
     { name: "About", path: "/about" },
     { name: "Contact", path: "/contact" },
   ];
@@ -23,18 +27,17 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <Coffee className="h-6 w-6 text-accent transition-transform group-hover:rotate-12" />
-            <span className="text-xl font-bold text-primary">Elm CafeGh</span>
+          <Link to="/" className="flex items-center gap-3 transition-transform hover:scale-105">
+            <img src={logo} alt="Elm Café Logo" className="h-12 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className="text-foreground hover:text-accent transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-accent after:transition-all hover:after:w-full"
+                className="text-foreground hover:text-accent transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-accent after:transition-all hover:after:w-full text-sm"
               >
                 {link.name}
               </Link>
@@ -54,7 +57,7 @@ const Navigation = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-foreground hover:text-accent transition-colors"
+            className="lg:hidden p-2 text-foreground hover:text-accent transition-colors"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -63,8 +66,8 @@ const Navigation = () => {
         {/* Mobile Navigation */}
         <div
           className={cn(
-            "md:hidden overflow-hidden transition-all duration-300",
-            isOpen ? "max-h-96 pb-4" : "max-h-0"
+            "lg:hidden overflow-hidden transition-all duration-300",
+            isOpen ? "max-h-[600px] pb-4" : "max-h-0"
           )}
         >
           <div className="flex flex-col gap-4 pt-4">
