@@ -144,9 +144,7 @@ const Index = () => {
       <section className="py-20 container mx-auto px-4">
         <div className="bg-gradient-to-r from-primary to-accent rounded-2xl p-12 text-center">
           <Coffee className="h-16 w-16 text-primary-foreground mx-auto mb-6" />
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
-            Ready to Experience Elm CafeGh?
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">Ready to Experience Elm Cafe?</h2>
           <p className="text-primary-foreground/90 text-lg mb-8 max-w-2xl mx-auto">
             Join us today and discover why we're Accra's favorite cafe destination
           </p>

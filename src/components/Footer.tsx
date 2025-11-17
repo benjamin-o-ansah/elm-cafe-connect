@@ -1,5 +1,6 @@
 import { Coffee, MapPin, Phone, Mail, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
+import logo from "@/assets/elm-cafe-logo.png";
 
 const Footer = () => {
   return (
@@ -7,10 +8,11 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           {/* Brand */}
-          <div>
-            <div className="flex items-center gap-2 mb-4">
-              <Coffee className="h-6 w-6 text-accent" />
-              <span className="text-xl font-bold">Elm CafeGh</span>
+         <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-3 transition-transform hover:scale-105">
+            <img src={logo} alt="Elm Café Logo" className="h-12 w-auto" />
+          </Link>
             </div>
             <p className="text-primary-foreground/80 text-sm">
               Redefining dining experiences with quality, sustainability, and local ingredients.
