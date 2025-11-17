@@ -68,7 +68,7 @@ const Navigation = () => {
         <div
           className={cn(
             "lg:hidden overflow-hidden transition-all duration-300",
-            isOpen ? "max-h-[600px] pb-4" : "max-h-0"
+            isOpen ? "max-h-[600px] pb-4 overflow-y-scroll" : "max-h-0",
           )}
         >
           <div className="flex flex-col gap-4 pt-4">
@@ -89,9 +89,7 @@ const Navigation = () => {
                 </Button>
               </Link>
               <Link to="/signup" onClick={() => setIsOpen(false)}>
-                <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
-                  Order Now
-                </Button>
+                <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">Order Now</Button>
               </Link>
             </div>
           </div>
