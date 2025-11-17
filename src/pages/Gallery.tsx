@@ -46,8 +46,8 @@ const Gallery = () => {
       </section>
 
       {/* Video Tour Section */}
-      <section className="pb-16 container mx-auto px-4">
-        {/* <Card className="relative overflow-hidden animate-scale-in group cursor-pointer max-w-4xl mx-auto">
+      {/* <section className="pb-16 container mx-auto px-4"> */}
+      {/* <Card className="relative overflow-hidden animate-scale-in group cursor-pointer max-w-4xl mx-auto">
           <div
             className="relative h-96 bg-cover bg-center"
             style={{ backgroundImage: `url(${restaurantInterior})` }}
@@ -68,14 +68,14 @@ const Gallery = () => {
           </div>
         </Card> */}
 
-        <Dialog open={showVideo} onOpenChange={setShowVideo}>
+      {/* <Dialog open={showVideo} onOpenChange={setShowVideo}>
           <DialogContent className="max-w-4xl p-0">
             <div className="aspect-video bg-muted flex items-center justify-center">
               <p className="text-muted-foreground">Video tour integration will be added with actual video content</p>
             </div>
           </DialogContent>
         </Dialog>
-      </section>
+      </section> */}
 
       {/* Photo Gallery */}
       <section className="pb-16 container mx-auto px-4">
