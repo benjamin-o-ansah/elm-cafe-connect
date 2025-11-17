@@ -44,7 +44,7 @@ const Index = () => {
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
           <source
-            src="https://filmora.wondershare.com/videos/ai-prompt/veo3-1/luxury-sports-car-veo3-1-ai-video-prompt-15.mp4"
+            src="https://www.instagram.com/reel/DPv3hB0CP3m/?utm_source=ig_embed&amp;utm_campaign=loading"
             type="video/mp4"
           />
         </video>
