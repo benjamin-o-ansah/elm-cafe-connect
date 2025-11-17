@@ -43,7 +43,10 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
-          <source src="https://www.instagram.com/reel/DPv3hB0CP3m/?igsh=MW92NGl1d2pyd2ZlbQ==" type="video/mp4" />
+          <source
+            src="https://filmora.wondershare.com/videos/ai-prompt/veo3-1/luxury-sports-car-veo3-1-ai-video-prompt-15.mp4"
+            type="video/mp4"
+          />
         </video>
         <div className="absolute inset-0 bg-cover bg-center">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70" />
