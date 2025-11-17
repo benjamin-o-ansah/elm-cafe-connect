@@ -28,13 +28,7 @@ const Gallery = () => {
 
       {/* Hero Section with Video Background */}
       <section className="relative h-[70vh] overflow-hidden">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        >
+        <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
           <source
             src="https://media.istockphoto.com/id/1485808391/video/alone-woman-sitting-restaurant-table-at-evening-city-lady-waiting-date-in-cafe.mp4?s=mp4-640x640-is&k=20&c=GX7zfslmD5U-BD64I9YV9lJAIXtug0akb1eEHAtNJSM="
             type="video/mp4"
@@ -53,7 +47,7 @@ const Gallery = () => {
 
       {/* Video Tour Section */}
       <section className="pb-16 container mx-auto px-4">
-        <Card className="relative overflow-hidden animate-scale-in group cursor-pointer max-w-4xl mx-auto">
+        {/* <Card className="relative overflow-hidden animate-scale-in group cursor-pointer max-w-4xl mx-auto">
           <div
             className="relative h-96 bg-cover bg-center"
             style={{ backgroundImage: `url(${restaurantInterior})` }}
@@ -72,14 +66,12 @@ const Gallery = () => {
               </div>
             </div>
           </div>
-        </Card>
+        </Card> */}
 
         <Dialog open={showVideo} onOpenChange={setShowVideo}>
           <DialogContent className="max-w-4xl p-0">
             <div className="aspect-video bg-muted flex items-center justify-center">
-              <p className="text-muted-foreground">
-                Video tour integration will be added with actual video content
-              </p>
+              <p className="text-muted-foreground">Video tour integration will be added with actual video content</p>
             </div>
           </DialogContent>
         </Dialog>
@@ -87,9 +79,7 @@ const Gallery = () => {
 
       {/* Photo Gallery */}
       <section className="pb-16 container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-primary text-center mb-12 animate-fade-in-up">
-          Photo Gallery
-        </h2>
+        <h2 className="text-3xl font-bold text-primary text-center mb-12 animate-fade-in-up">Photo Gallery</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {galleryImages.map((image, index) => (
             <Card
@@ -122,18 +112,14 @@ const Gallery = () => {
           >
             <X className="h-6 w-6" />
           </button>
-          {selectedImage && (
-            <img src={selectedImage} alt="Gallery" className="w-full h-auto animate-scale-in" />
-          )}
+          {selectedImage && <img src={selectedImage} alt="Gallery" className="w-full h-auto animate-scale-in" />}
         </DialogContent>
       </Dialog>
 
       {/* 360 Tour CTA */}
       <section className="pb-16 container mx-auto px-4">
         <div className="bg-gradient-to-r from-primary to-accent rounded-2xl p-12 text-center max-w-4xl mx-auto animate-fade-in-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
-            Experience Our Space in 360°
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">Experience Our Space in 360°</h2>
           <p className="text-primary-foreground/90 text-lg mb-8 max-w-2xl mx-auto">
             Take a virtual walk through our restaurant and explore every corner from the comfort of your home
           </p>
