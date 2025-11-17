@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Gift, CreditCard, Mail, Heart } from "lucide-react";
+import { Gift, Mail, ShoppingCart, CreditCard, Heart, CheckCircle } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -7,6 +7,9 @@ import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import Newsletter from "@/components/Newsletter";
+import StepsGuide from "@/components/StepsGuide";
+import elegantBg from "@/assets/elegant-background.jpg";
 
 const GiftCards = () => {
   const [selectedAmount, setSelectedAmount] = useState<number | null>(null);
@@ -20,11 +23,15 @@ const GiftCards = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      <div 
+        className="fixed inset-0 opacity-5 pointer-events-none"
+        style={{ backgroundImage: `url(${elegantBg})`, backgroundSize: 'cover', backgroundAttachment: 'fixed' }}
+      />
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 container mx-auto px-4">
+      <section className="pt-32 pb-16 container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center animate-fade-in">
           <Gift className="h-16 w-16 text-accent mx-auto mb-6 animate-pulse" />
           <h1 className="text-5xl md:text-6xl font-bold text-primary mb-6">Gift Cards & Vouchers</h1>
@@ -35,7 +42,7 @@ const GiftCards = () => {
       </section>
 
       {/* Main Content */}
-      <section className="pb-16 container mx-auto px-4">
+      <section className="pb-16 container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {/* Purchase Form */}
           <Card className="animate-scale-in">
@@ -243,6 +250,17 @@ const GiftCards = () => {
         </div>
       </section>
 
+      <StepsGuide
+        title="How to Purchase a Gift Card"
+        steps={[
+          { number: 1, title: "Select Amount", description: "Choose a preset or custom amount", icon: ShoppingCart },
+          { number: 2, title: "Add Details", description: "Enter recipient and personal information", icon: Mail },
+          { number: 3, title: "Make Payment", description: "Complete secure checkout", icon: CreditCard },
+          { number: 4, title: "Receive Card", description: "Digital card sent via email instantly", icon: CheckCircle },
+        ]}
+      />
+
+      <Newsletter />
       <Footer />
     </div>
   );

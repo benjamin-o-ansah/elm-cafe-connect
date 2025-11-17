@@ -13,6 +13,9 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
+import ChefsCorner from "./pages/ChefsCorner";
+import Blog from "./pages/Blog";
+import Events from "./pages/Events";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +33,9 @@ const App = () => (
           <Route path="/promotions" element={<Promotions />} />
           <Route path="/gift-cards" element={<GiftCards />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/chefs-corner" element={<ChefsCorner />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/events" element={<Events />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/signin" element={<SignIn />} />

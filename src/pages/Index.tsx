@@ -4,7 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import Newsletter from "@/components/Newsletter";
 import heroImage from "@/assets/hero-cafe.jpg";
+import elegantBg from "@/assets/elegant-background.jpg";
 
 const Index = () => {
   const features = [
@@ -31,7 +33,11 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      <div 
+        className="fixed inset-0 opacity-5 pointer-events-none"
+        style={{ backgroundImage: `url(${elegantBg})`, backgroundSize: 'cover', backgroundAttachment: 'fixed' }}
+      />
       <Navigation />
       
       {/* Hero Section */}
@@ -151,6 +157,7 @@ const Index = () => {
         </div>
       </section>
 
+      <Newsletter />
       <Footer />
     </div>
   );

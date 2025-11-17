@@ -8,7 +8,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import Newsletter from "@/components/Newsletter";
+import StepsGuide from "@/components/StepsGuide";
 import restaurantInterior from "@/assets/restaurant-interior.jpg";
+import elegantBg from "@/assets/elegant-background.jpg";
+import { Calendar as CalendarIcon2, Users as Users2, MessageSquare as MessageSquare2, CheckCircle } from "lucide-react";
 
 const Reservations = () => {
   const [formData, setFormData] = useState({
@@ -32,7 +36,11 @@ const Reservations = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      <div 
+        className="fixed inset-0 opacity-5 pointer-events-none"
+        style={{ backgroundImage: `url(${elegantBg})`, backgroundSize: 'cover', backgroundAttachment: 'fixed' }}
+      />
       <Navigation />
 
       {/* Hero Section */}
