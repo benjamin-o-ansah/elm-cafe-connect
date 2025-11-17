@@ -26,13 +26,28 @@ const Gallery = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center animate-fade-in">
-          <h1 className="text-5xl md:text-6xl font-bold text-primary mb-6">Our Gallery</h1>
-          <p className="text-xl text-muted-foreground">
-            Experience the ambiance, quality, and passion that defines Elm CafeGh
-          </p>
+      {/* Hero Section with Video Background */}
+      <section className="relative h-[70vh] overflow-hidden">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source
+            src="https://media.istockphoto.com/id/1485808391/video/alone-woman-sitting-restaurant-table-at-evening-city-lady-waiting-date-in-cafe.mp4?s=mp4-640x640-is&k=20&c=GX7zfslmD5U-BD64I9YV9lJAIXtug0akb1eEHAtNJSM="
+            type="video/mp4"
+          />
+        </video>
+        <div className="absolute inset-0 bg-primary/40" />
+        <div className="relative container mx-auto px-4 h-full flex items-center justify-center">
+          <div className="max-w-3xl mx-auto text-center animate-fade-in">
+            <h1 className="text-5xl md:text-6xl font-bold text-primary-foreground mb-6">Our Gallery</h1>
+            <p className="text-xl text-primary-foreground/90">
+              Experience the ambiance, quality, and passion that defines Elm CafeGh
+            </p>
+          </div>
         </div>
       </section>
 
