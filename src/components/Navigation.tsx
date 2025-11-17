@@ -31,7 +31,7 @@ const Navigation = () => {
           <Link to="/" className="flex items-center gap-3 transition-transform hover:scale-105">
             <img src={logo} alt="Elm Café Logo" className="h-12 w-auto" />
           </Link>
-
+            </div>
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
