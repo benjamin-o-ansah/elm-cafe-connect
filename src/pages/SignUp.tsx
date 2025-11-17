@@ -4,6 +4,7 @@ import { Coffee, Mail, Lock, User, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import authHero from "@/assets/auth-hero.jpg";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -27,13 +28,16 @@ const SignUp = () => {
       alert("Passwords don't match!");
       return;
     }
-    // Handle sign up
     alert("Sign up functionality will be implemented with backend integration");
   };
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center p-4">
-      <div className="w-full max-w-md">
+    <div 
+      className="min-h-screen flex items-center justify-center p-4 bg-cover bg-center relative"
+      style={{ backgroundImage: `url(${authHero})` }}
+    >
+      <div className="absolute inset-0 bg-primary/60" />
+      <div className="w-full max-w-md relative z-10">
         {/* Logo */}
         <Link to="/" className="flex items-center justify-center gap-2 mb-8">
           <Coffee className="h-8 w-8 text-accent" />

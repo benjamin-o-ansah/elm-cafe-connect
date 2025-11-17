@@ -6,6 +6,8 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { Download, X } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import AIChatbot from "@/components/AIChatbot";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import menuHero from "@/assets/menu-hero.jpg";
 import avocadoToast from "@/assets/menu/avocado-toast.jpg";
 import classicBreakfast from "@/assets/menu/classic-breakfast.jpg";
@@ -207,8 +209,8 @@ const Menu = () => {
           {filteredItems.map((item, index) => (
             <Card
               key={item.id}
-              className="hover:shadow-xl transition-all duration-500 hover:-translate-y-2 cursor-pointer animate-scale-in overflow-hidden group"
-              style={{ animationDelay: `${index * 0.05}s` }}
+              className="hover:shadow-xl transition-all duration-500 hover:-translate-y-2 cursor-pointer animate-fly-in-right overflow-hidden group opacity-0"
+              style={{ animationDelay: `${index * 0.15}s` }}
               onClick={() => setSelectedItem(item)}
             >
               <div className="relative overflow-hidden h-48">
@@ -301,6 +303,8 @@ const Menu = () => {
       </Dialog>
 
       <Footer />
+      <AIChatbot />
+      <WhatsAppButton />
     </div>
   );
 };
