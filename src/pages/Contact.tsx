@@ -67,7 +67,7 @@ const Contact = () => {
                 href="mailto:management@elmcafegh.com"
                 className="text-sm text-muted-foreground hover:text-accent transition-colors"
               >
-                management@elmcafegh.com
+                management@elmcafe.com
               </a>
             </CardContent>
           </Card>

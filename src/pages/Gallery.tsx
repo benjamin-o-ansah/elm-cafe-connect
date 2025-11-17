@@ -2,24 +2,30 @@ import { useState } from "react";
 import { X, Play } from "lucide-react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import heroImage from "@/assets/hero-cafe.jpg";
-import menuHero from "@/assets/menu-hero.jpg";
-import restaurantInterior from "@/assets/restaurant-interior.jpg";
+import client1 from "@/assets/2.jpg";
+import burgerImage from "@/assets/9.jpg";
+import happyClient from "@/assets/14.jpg";
+import dish from "@/assets/1.jpg";
+import restaurantOutlook from "@/assets/intro.jpg";
+import samosaImage from "@/assets/6.jpg";
+import clientShare from "@/assets/11.jpg";
+import tourVideo from '@/assets/home_bg.mp4';
+import demoVideo from '@/assets/demo.mp4';
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [showVideo, setShowVideo] = useState(false);
 
   const galleryImages = [
-    { id: 1, src: heroImage, alt: "Cafe Interior", category: "interior" },
-    { id: 2, src: menuHero, alt: "Gourmet Dishes", category: "food" },
-    { id: 3, src: restaurantInterior, alt: "Private Dining", category: "interior" },
-    { id: 4, src: heroImage, alt: "Coffee Bar", category: "interior" },
-    { id: 5, src: menuHero, alt: "Fresh Pastries", category: "food" },
-    { id: 6, src: restaurantInterior, alt: "Elegant Ambiance", category: "interior" },
+    { id: 1, src: client1, alt: "Cafe Interior with Customer Eating", category: "interior" },
+    { id: 2, src: burgerImage, alt: "Burger", category: "food" },
+    { id: 3, src: happyClient, alt: "Smiling Client in Cafe", category: "interior" },
+    { id: 4, src: samosaImage, alt: "Samosa", category: "interior" },
+    { id: 5, src: dish, alt: "Sliced Eggs and Chicken", category: "food" },
+    { id: 6, src: clientShare, alt: "Happy Client", category: "interior" },
   ];
 
   return (
@@ -30,7 +36,7 @@ const Gallery = () => {
       <section className="relative h-[70vh] overflow-hidden">
         <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
           <source
-            src="https://media.istockphoto.com/id/1485808391/video/alone-woman-sitting-restaurant-table-at-evening-city-lady-waiting-date-in-cafe.mp4?s=mp4-640x640-is&k=20&c=GX7zfslmD5U-BD64I9YV9lJAIXtug0akb1eEHAtNJSM="
+            src={demoVideo}
             type="video/mp4"
           />
         </video>
@@ -115,9 +121,41 @@ const Gallery = () => {
           {selectedImage && <img src={selectedImage} alt="Gallery" className="w-full h-auto animate-scale-in" />}
         </DialogContent>
       </Dialog>
+  <section className="pb-16 container mx-auto px-4"> 
+      <Card className="relative overflow-hidden animate-scale-in group cursor-pointer max-w-4xl mx-auto">
+          <div
+            className="relative h-96 bg-cover bg-center"
+            style={{ backgroundImage: `url(${restaurantOutlook})` }}
+            onClick={() => setShowVideo(true)}
+          >
+            <div className="absolute inset-0 bg-primary/60 group-hover:bg-primary/40 transition-all duration-500" />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="text-center">
+                <div className="bg-background/20 backdrop-blur-sm p-6 rounded-full mb-4 inline-block transition-transform duration-300 group-hover:scale-110">
+                  <Play className="h-16 w-16 text-primary-foreground" fill="currentColor" />
+                </div>
+                <h3 className="text-2xl font-bold text-primary-foreground mb-2">
+                  Experience Our Space in 360°
+                </h3>
+                <p className="text-primary-foreground/90">Click to experience our restaurant</p>
+              </div>
+            </div>
+          </div>
+        </Card>
 
+      <Dialog open={showVideo} onOpenChange={setShowVideo}>
+          <DialogContent className="max-w-4xl p-0">
+            <div className="aspect-video bg-muted flex items-center justify-center">
+            <video autoPlay loop playsInline className="absolute inset-0 w-full h-full object-cover">
+          <source src={tourVideo} type="video/mp4" />
+        </video>
+              <p className="text-muted-foreground">Take a virtual walk through our restaurant and explore every corner from the comfort of your home</p>
+            </div>
+          </DialogContent>
+        </Dialog>
+      </section>
       {/* 360 Tour CTA */}
-      <section className="pb-16 container mx-auto px-4">
+       {/* <section className="pb-16 container mx-auto px-4">
         <div className="bg-gradient-to-r from-primary to-accent rounded-2xl p-12 text-center max-w-4xl mx-auto animate-fade-in-up">
           <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">Experience Our Space in 360°</h2>
           <p className="text-primary-foreground/90 text-lg mb-8 max-w-2xl mx-auto">
@@ -127,8 +165,7 @@ const Gallery = () => {
             Launch 360° Virtual Tour
           </Button>
         </div>
-      </section>
-
+      </section> */}
       <Footer />
     </div>
   );

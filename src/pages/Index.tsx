@@ -77,7 +77,7 @@ const Index = () => {
       {/* Features Section */}
       <section className="py-20 container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl font-bold text-primary mb-4">Why Choose Elm CafeGh?</h2>
+          <h2 className="text-4xl font-bold text-primary mb-4">Why Choose Elm Cafe ?</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             We're committed to providing an exceptional dining experience with convenient features designed for you
           </p>
@@ -118,21 +118,36 @@ const Index = () => {
                   <div>
                     <h3 className="text-xl font-semibold text-primary mb-2">Embassy Gardens</h3>
                     <p className="text-muted-foreground mb-2">Accra, Ghana</p>
-                    <p className="text-foreground font-medium">+233 59 281 6692</p>
+                    <p className="text-foreground font-medium pb-4">+233 59 281 6692</p>
+                    <Link to="/contact">
+              <Button size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8">
+                View on Map
+              </Button>
+            </Link>
                   </div>
+                 
                 </div>
               </CardContent>
             </Card>
 
             <Card className="hover:shadow-lg transition-shadow">
               <CardContent className="pt-6">
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-4 ">
                   <MapPin className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="text-xl font-semibold text-primary mb-2">The Lennox</h3>
                     <p className="text-muted-foreground mb-2">Accra, Ghana</p>
-                    <p className="text-foreground font-medium">+233 53 044 1580</p>
+                    <p className="text-foreground font-medium pb-4">+233 53 044 1580</p>
+                     <Link to="/contact">
+                      <Button size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8">
+                      View On Map
+                    </Button>
+                    </Link>
                   </div>
+                  <div>
+                    
+                  </div>
+                 
                 </div>
               </CardContent>
             </Card>

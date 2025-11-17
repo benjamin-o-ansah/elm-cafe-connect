@@ -42,7 +42,7 @@ const About = () => {
         <div className="absolute inset-0 bg-primary/70" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center animate-fade-in">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">About Elm CafeGh</h1>
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">About Elm Cafe</h1>
             <p className="text-xl text-white/90 leading-relaxed">
               More than just a cafe - we're a community hub dedicated to redefining the dining experience
               in Accra through quality, sustainability, and genuine hospitality.
@@ -58,7 +58,7 @@ const About = () => {
             <h2 className="text-3xl font-bold text-primary mb-6">Our Story</h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                Founded in the heart of Accra, Elm CafeGh was born from a simple vision: to create a space
+                Founded in the heart of Accra, Elm Cafe was born from a simple vision: to create a space
                 where quality food, sustainable practices, and community spirit come together.
               </p>
               <p>
@@ -107,7 +107,7 @@ const About = () => {
             <h2 className="text-3xl font-bold text-primary mb-6">Our Team</h2>
             <p className="text-muted-foreground leading-relaxed">
               Behind every great meal is a dedicated team of passionate professionals. From our skilled
-              baristas to our talented chefs, everyone at Elm CafeGh is committed to making your visit
+              baristas to our talented chefs, everyone at Elm Cafe is committed to making your visit
               exceptional. We're proud to be a local employer, providing opportunities and training to
               talented individuals across Accra.
             </p>

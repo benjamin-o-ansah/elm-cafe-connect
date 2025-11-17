@@ -17,7 +17,7 @@ import latte from "@/assets/menu/latte.jpg";
 import smoothie from "@/assets/menu/smoothie.jpg";
 import chocolateCake from "@/assets/menu/chocolate-cake.jpg";
 import fruitTart from "@/assets/menu/fruit-tart.jpg";
-
+import bgVideo from "@/assets/burger.mp4";
 const Menu = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedDietary, setSelectedDietary] = useState<string[]>([]);
@@ -999,15 +999,18 @@ const Menu = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative h-[400px] flex items-center justify-center overflow-hidden mt-16">
-        <div
+      <section className="relative h-[800px] flex items-center justify-center overflow-hidden mt-16">
+         <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
+                  <source src={bgVideo} type="video/mp4" />
+                </video>
+        {/* <div
           className="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105"
           style={{
             backgroundImage: `url(${menuHero})`,
           }}
-        >
+        > */}
           <div className="absolute inset-0 bg-primary/80" />
-        </div>
+        {/* </div> */}
 
         <div className="relative z-10 text-center animate-fade-in">
           <h1 className="text-5xl md:text-6xl font-bold text-primary-foreground mb-4">Our Menu</h1>

@@ -8,15 +8,15 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           {/* Brand */}
-         <div className="flex items-center justify-between h-16">
+         <div className="flex items-center justify-between h-16 gap-10">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 transition-transform hover:scale-105">
-            <img src={logo} alt="Elm Café Logo" className="h-12 w-auto" />
+            <img src={logo} alt="Elm Café Logo" className="h-14" />
           </Link>
-            </div>
-            <p className="text-primary-foreground/80 text-sm">
+          
+            {/* <p className="text-primary-foreground/80 text-sm">
               Redefining dining experiences with quality, sustainability, and local ingredients.
-            </p>
+            </p> */}
           </div>
 
           {/* Quick Links */}
@@ -38,6 +38,36 @@ const Footer = () => {
                   Contact
                 </Link>
               </li>
+              <li>
+                <Link to="/contact" className="text-primary-foreground/80 hover:text-accent transition-colors">
+                  Reservations
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-primary-foreground/80 hover:text-accent transition-colors">
+                  Gift Cards
+                </Link>
+              </li>
+              {/* <li>
+                <Link to="/contact" className="text-primary-foreground/80 hover:text-accent transition-colors">
+                  Blogs
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-primary-foreground/80 hover:text-accent transition-colors">
+                  Events
+                </Link>
+              </li>
+               <li>
+                <Link to="/contact" className="text-primary-foreground/80 hover:text-accent transition-colors">
+                  Chef's corner
+                </Link>
+              </li>
+               <li>
+                <Link to="/contact" className="text-primary-foreground/80 hover:text-accent transition-colors">
+                  Loyalty & Reviews
+                </Link>
+              </li> */}
             </ul>
           </div>
 
@@ -76,10 +106,10 @@ const Footer = () => {
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-accent flex-shrink-0" />
                 <a
-                  href="mailto:management@elmcafegh.com"
+                  href="mailto:management@elmcafe.com"
                   className="text-primary-foreground/80 hover:text-accent transition-colors"
                 >
-                  management@elmcafegh.com
+                  management@elmcafe.com
                 </a>
               </li>
             </ul>
@@ -87,7 +117,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center text-sm text-primary-foreground/80">
-          <p>&copy; {new Date().getFullYear()} Elm CafeGh. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Elm Cafe. All rights reserved.</p>
         </div>
       </div>
     </footer>

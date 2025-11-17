@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import authHero from "@/assets/auth-hero.jpg";
+import logo from "@/assets/elm-cafe-logo.png";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -39,15 +40,17 @@ const SignUp = () => {
       <div className="absolute inset-0 bg-primary/60" />
       <div className="w-full max-w-md relative z-10">
         {/* Logo */}
-        <Link to="/" className="flex items-center justify-center gap-2 mb-8">
-          <Coffee className="h-8 w-8 text-accent" />
-          <span className="text-2xl font-bold text-primary">Elm CafeGh</span>
-        </Link>
+        <div className="mb-5">
+           <Link to="/" className="flex items-center gap-3 transition-transform hover:scale-105">
+            <img src={logo} alt="Elm Café Logo" className="h-14" />
+          </Link>
+        </div>
+       
 
         <Card className="animate-fade-in">
           <CardHeader>
             <CardTitle className="text-2xl text-center">Create Account</CardTitle>
-            <p className="text-muted-foreground text-center">Join the Elm CafeGh community</p>
+            <p className="text-muted-foreground text-center">Join the Elm Cafe community</p>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
