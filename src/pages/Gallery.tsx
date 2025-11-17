@@ -78,7 +78,7 @@ const Gallery = () => {
       </section> */}
 
       {/* Photo Gallery */}
-      <section className="pb-16 container mx-auto px-4">
+      <section className="pt-10 pb-16 container mx-auto px-4">
         <h2 className="text-3xl font-bold text-primary text-center mb-12 animate-fade-in-up">Photo Gallery</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {galleryImages.map((image, index) => (
