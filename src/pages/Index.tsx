@@ -44,10 +44,7 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
-          <source
-            src=homeBgVid
-            type="video/mp4"
-          />
+          <source src="${homeBgVid}" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-cover bg-center">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70" />
