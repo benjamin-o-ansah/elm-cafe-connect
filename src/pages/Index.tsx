@@ -47,7 +47,11 @@ const Index = () => {
           <source src={homeBgVid} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-cover bg-center">
+<<<<<<< HEAD
           <div className="absolute inset-0 bg-gradient-to-r from-secondary/10 to-background/30" />
+=======
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/40 to-primary/40" />
+>>>>>>> 55261e3932fa432a86aa5e8bf913531f6e8f476b
         </div>
 
         <div className="relative z-10 container mx-auto px-4 text-center animate-fade-in">
@@ -120,12 +124,11 @@ const Index = () => {
                     <p className="text-muted-foreground mb-2">Accra, Ghana</p>
                     <p className="text-foreground font-medium pb-4">+233 59 281 6692</p>
                     <Link to="/contact">
-              <Button size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8">
-                View on Map
-              </Button>
-            </Link>
+                      <Button size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8">
+                        View on Map
+                      </Button>
+                    </Link>
                   </div>
-                 
                 </div>
               </CardContent>
             </Card>
@@ -138,16 +141,13 @@ const Index = () => {
                     <h3 className="text-xl font-semibold text-primary mb-2">The Lennox</h3>
                     <p className="text-muted-foreground mb-2">Accra, Ghana</p>
                     <p className="text-foreground font-medium pb-4">+233 53 044 1580</p>
-                     <Link to="/contact">
+                    <Link to="/contact">
                       <Button size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8">
-                      View On Map
-                    </Button>
+                        View On Map
+                      </Button>
                     </Link>
                   </div>
-                  <div>
-                    
-                  </div>
-                 
+                  <div></div>
                 </div>
               </CardContent>
             </Card>
