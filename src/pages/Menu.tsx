@@ -1123,23 +1123,29 @@ const Menu = () => {
                   <span className="text-lg font-bold text-secondary">GHS {item.price}</span>
                 </div>
                 <p className="text-muted-foreground mb-4 line-clamp-2">{item.description}</p>
-                {item.dietary.length > 0 && (
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {item.dietary.map((tag) => (
+                {/* Badge area with fixed height for uniform alignment */}
+                <div className="flex flex-wrap gap-2 mb-4 min-h-[28px]">
+                  {item.dietary.length > 0 ? (
+                    item.dietary.map((tag) => (
                       <Badge key={tag} variant="default" className="text-xs">
                         {tag}
                       </Badge>
-                    ))}
-                  </div>
-                )}
+                    ))
+                  ) : (
+                    <div className="h-[28px]" />
+                  )}
+                </div>
                 <Button
-                  onClick={() => addItem({
-                    id: item.id.toString(),
-                    name: item.name,
-                    price: parseFloat(item.price),
-                    category: getCategoryDisplayName(item.category),
-                    description: item.description
-                  })}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    addItem({
+                      id: item.id.toString(),
+                      name: item.name,
+                      price: parseFloat(item.price),
+                      category: getCategoryDisplayName(item.category),
+                      description: item.description
+                    });
+                  }}
                   size="sm"
                   className="w-full gap-2"
                 >
