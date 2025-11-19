@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Calendar, Clock, MapPin, Users } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import eventImg from "@/assets/event-1.jpg";
-import elegantBg from "@/assets/elegant-background.jpg";
+import elegantBg from "@/assets/bg-img.png";
 
 const Events = () => {
   const { toast } = useToast();
@@ -66,12 +66,12 @@ const Events = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${eventImg})` }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-primary/30" />
         </div>
         <div className="relative z-10 container mx-auto px-4 text-center animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6">

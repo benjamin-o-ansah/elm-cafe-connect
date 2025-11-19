@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import AIChatbot from "@/components/AIChatbot";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import aboutHero from "@/assets/about-hero.jpg";
+import elegantBg from "@/assets/bg-img.png"
 
 const About = () => {
   const values = [
@@ -33,13 +34,16 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-
+ <div 
+        className="fixed inset-0 opacity-5 pointer-events-none"
+        style={{ backgroundImage: `url(${elegantBg})`, backgroundSize: 'cover', backgroundAttachment: 'fixed' }}
+      />
       {/* Hero Section */}
       <section 
-        className="pt-32 pb-16 relative bg-cover bg-center"
+        className="pt-32 pb-16 relative h-[700px] flex items-center justify-center overflow-hidden bg-cover bg-center "
         style={{ backgroundImage: `url(${aboutHero})` }}
       >
-        <div className="absolute inset-0 bg-primary/70" />
+        <div className="absolute inset-0 bg-primary/20" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center animate-fade-in">
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">About Elm Cafe</h1>
@@ -77,8 +81,8 @@ const About = () => {
       {/* Values Section */}
       <section className="py-16 container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-primary mb-4">Our Values</h2>
-          <p className="text-muted-foreground text-lg">The principles that guide everything we do</p>
+          <h2 className="text-3xl font-bold text-muted mb-4">Our Values</h2>
+          <p className="text-muted text-lg">The principles that guide everything we do</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">

@@ -81,12 +81,12 @@ const ReviewsSection = () => {
               </div>
               <p className="text-muted-foreground">Based on {stats.totalReviews} reviews</p>
               <div className="flex gap-2 justify-center mt-4">
-                <Button variant="outline" size="sm" className="gap-2">
-                  <ExternalLink className="h-4 w-4" />
+                <Button variant="outline" size="sm" className="gap-2 text-muted">
+                  <ExternalLink className="h-4 w-4 text-muted" />
                   Google Reviews
                 </Button>
-                <Button variant="outline" size="sm" className="gap-2">
-                  <ExternalLink className="h-4 w-4" />
+                <Button variant="outline" size="sm" className="gap-2 text-muted">
+                  <ExternalLink className="h-4 w-4 text-muted" />
                   TripAdvisor
                 </Button>
               </div>

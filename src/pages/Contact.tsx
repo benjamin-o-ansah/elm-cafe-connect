@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
-import elegantBg from "@/assets/elegant-background.jpg";
+import elegantBg from "@/assets/bg-img.png";
 
 const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
@@ -21,12 +21,15 @@ const Contact = () => {
         style={{ backgroundImage: `url(${elegantBg})`, backgroundSize: 'cover', backgroundAttachment: 'fixed' }}
       />
       <Navigation />
-
+<div 
+        className="fixed inset-0 opacity-5 pointer-events-none"
+        style={{ backgroundImage: `url(${elegantBg})`, backgroundSize: 'cover', backgroundAttachment: 'fixed' }}
+      />
       {/* Hero Section */}
       <section className="pt-32 pb-16 container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center animate-fade-in">
-          <h1 className="text-5xl md:text-6xl font-bold text-primary mb-6">Get in Touch</h1>
-          <p className="text-xl text-muted-foreground">
+          <h1 className="text-5xl md:text-6xl font-bold text-muted mb-6">Get in Touch</h1>
+          <p className="text-xl text-muted">
             We'd love to hear from you. Visit us or send us a message.
           </p>
         </div>
@@ -91,7 +94,7 @@ const Contact = () => {
               <h3 className="text-xl font-bold text-primary mb-4">Embassy Gardens Location</h3>
               <div className="aspect-video rounded-lg overflow-hidden">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.8364057282243!2d-0.1870472!3d5.5893407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMzUnMjEuNiJOIDDCsDExJzEzLjQiVw!5e0!3m2!1sen!2sgh!4v1234567890"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.878186913035!2d-0.17029642417779411!3d5.585017533355458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9b7d87c1bfc5%3A0x6c5f1f73e4f340d5!2sElm%20Cafe%20Embassy%20Gardens!5e0!3m2!1sen!2sgh!4v1763578070577!5m2!1sen!2sgh"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -109,7 +112,7 @@ const Contact = () => {
               <h3 className="text-xl font-bold text-primary mb-4">The Lennox Location</h3>
               <div className="aspect-video rounded-lg overflow-hidden">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.7234567890123!2d-0.1870472!3d5.6123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMzYnNDQuNCJOIDDCsDExJzEzLjQiVw!5e0!3m2!1sen!2sgh!4v1234567890"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.733860807895!2d-0.18865422417770972!3d5.606273333140376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9be0fb1377d9%3A0x684b039a9f83a43!2sElm%20Caf%C3%A9%20at%20The%20Lennox!5e0!3m2!1sen!2sgh!4v1763578152022!5m2!1sen!2sgh"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -132,23 +135,24 @@ const Contact = () => {
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="text-sm font-medium text-foreground mb-2 block">Name</label>
-                    <Input placeholder="Your name" required />
+                    <Input placeholder="Your name" required className="placeholder:text-muted"/>
                   </div>
                   <div>
                     <label className="text-sm font-medium text-foreground mb-2 block">Email</label>
-                    <Input type="email" placeholder="your@email.com" required />
+                    <Input type="email" placeholder="your@email.com" required className="placeholder:text-muted" />
                   </div>
                 </div>
                 <div>
                   <label className="text-sm font-medium text-foreground mb-2 block">Subject</label>
-                  <Input placeholder="How can we help?" required />
+                  <Input placeholder="How can we help?" required className="placeholder:text-muted"/>
                 </div>
                 <div>
                   <label className="text-sm font-medium text-foreground mb-2 block">Message</label>
                   <Textarea
                     placeholder="Tell us more..."
-                    className="min-h-[150px]"
+                    className="min-h-[150px] placeholder:text-muted"
                     required
+                   
                   />
                 </div>
                 <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">

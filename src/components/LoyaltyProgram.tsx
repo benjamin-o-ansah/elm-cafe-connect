@@ -43,10 +43,10 @@ const LoyaltyProgram = () => {
         <CardHeader>
           <div className="flex items-center justify-between">
             <CardTitle className="text-2xl flex items-center gap-2">
-              <Star className="h-6 w-6 text-accent" />
+              <Star className="h-6 w-6 text-secondary" />
               Your Loyalty Status
             </CardTitle>
-            <Badge variant="secondary" className="text-lg px-4 py-2">
+            <Badge variant="secondary" className="text-lg px-4 py-2 text-muted">
               Coffee Lover
             </Badge>
           </div>
@@ -68,7 +68,7 @@ const LoyaltyProgram = () => {
 
       {/* Membership Tiers */}
       <div>
-        <h3 className="text-2xl font-bold text-primary mb-6">Membership Tiers</h3>
+        <h3 className="text-2xl font-bold text-muted mb-6">Membership Tiers</h3>
         <div className="grid md:grid-cols-3 gap-6">
           {tiers.map((tier, index) => (
             <Card
@@ -89,7 +89,7 @@ const LoyaltyProgram = () => {
                 <ul className="space-y-2">
                   {tier.benefits.map((benefit, idx) => (
                     <li key={idx} className="flex items-start gap-2 text-sm">
-                      <Star className="h-4 w-4 text-accent mt-0.5 flex-shrink-0" />
+                      <Star className="h-4 w-4 text-secondary mt-0.5 flex-shrink-0" />
                       <span>{benefit}</span>
                     </li>
                   ))}
@@ -102,7 +102,7 @@ const LoyaltyProgram = () => {
 
       {/* Rewards Catalog */}
       <div>
-        <h3 className="text-2xl font-bold text-primary mb-6">Rewards Catalog</h3>
+        <h3 className="text-2xl font-bold text-primary-foreground mb-6">Rewards Catalog</h3>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {rewards.map((reward, index) => (
             <Card
@@ -111,10 +111,10 @@ const LoyaltyProgram = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardContent className="pt-6">
-                <reward.icon className="h-10 w-10 text-accent mx-auto mb-3" />
+                <reward.icon className="h-10 w-10 text-background mx-auto mb-3" />
                 <h4 className="font-semibold mb-2">{reward.name}</h4>
-                <Badge variant="secondary">{reward.points} points</Badge>
-                <Button variant="outline" className="w-full mt-4">
+                <Badge variant="secondary" className="text-muted">{reward.points} points</Badge>
+                <Button variant="outline" className="w-full mt-4 text-muted">
                   Redeem
                 </Button>
               </CardContent>
@@ -124,7 +124,7 @@ const LoyaltyProgram = () => {
       </div>
 
       {/* How It Works */}
-      <Card className="bg-muted/50">
+      <Card className="">
         <CardHeader>
           <CardTitle className="text-xl">How to Earn Points</CardTitle>
         </CardHeader>
