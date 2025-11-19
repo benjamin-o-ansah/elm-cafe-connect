@@ -156,7 +156,7 @@ const Checkout = () => {
                 {/* Contact Information */}
                 <Card>
                   <CardHeader>
-                    <CardTitle className="text-primary-foreground">Contact Information</CardTitle>
+                    <CardTitle className="text-primary">Contact Information</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div className="grid grid-cols-2 gap-4">
