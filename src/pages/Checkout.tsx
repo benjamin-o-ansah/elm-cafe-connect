@@ -115,7 +115,7 @@ const Checkout = () => {
                         <Input
                           id="address"
                           placeholder="Enter your delivery address"
-                          className="placeholder:text-muted"
+                          className="placeholder:text-primary-foreground text-primary-foreground"
                           required
                         />
                       </div>
@@ -131,14 +131,14 @@ const Checkout = () => {
                             type="tel"
                             placeholder="+233..."
                             required
-                            className="placeholder:text-muted"
+                            className="placeholder:text-primary-foreground text-primary-foreground"
                           />
                         </div>
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="instructions">Delivery Instructions (Optional)</Label>
                         <Textarea
-                          className="placeholder:text-muted"
+                          className="placeholder:text-primary-foreground text-primary-foreground"
                           id="instructions"
                           placeholder="Add any special instructions for delivery..."
                           rows={3}
@@ -156,22 +156,35 @@ const Checkout = () => {
                 {/* Contact Information */}
                 <Card>
                   <CardHeader>
-                    <CardTitle>Contact Information</CardTitle>
+                    <CardTitle className="text-primary-foreground">Contact Information</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div className="grid grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="firstName">First Name</Label>
-                        <Input id="firstName" required className="placeholder:text-muted" />
+                        <Input
+                          id="firstName"
+                          required
+                          className="placeholder:text-primary-foreground text-primary-foreground"
+                        />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="lastName">Last Name</Label>
-                        <Input id="lastName" required className="placeholder:text-muted" />
+                        <Input
+                          id="lastName"
+                          required
+                          className="placeholder:text-primary-foreground text-primary-foreground"
+                        />
                       </div>
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="email">Email</Label>
-                      <Input id="email" type="email" required className="placeholder:text-muted" />
+                      <Input
+                        id="email"
+                        type="email"
+                        required
+                        className="placeholder:text-primary-foreground text-primary-foreground"
+                      />
                     </div>
                   </CardContent>
                 </Card>
