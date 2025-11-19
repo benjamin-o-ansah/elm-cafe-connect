@@ -125,7 +125,7 @@ const Promotions = () => {
                     <Clock className="h-3 w-3 mr-1" />
                     {promo.validUntil}
                   </Badge>
-                  {promo.active && <Badge className="bg-green-500 text-muted">Active</Badge>}
+                  {promo.active && <Badge className="bg-green-500 text-white">Active</Badge>}
                 </div>
               </CardContent>
             </Card>
