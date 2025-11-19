@@ -1,40 +1,40 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
-import { useCart } from '@/contexts/CartContext';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
-import { Textarea } from '@/components/ui/textarea';
-import { Separator } from '@/components/ui/separator';
-import { ArrowLeft, MapPin, Store, CreditCard, Wallet, Banknote } from 'lucide-react';
-import { toast } from '@/hooks/use-toast';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import { useCart } from "@/contexts/CartContext";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Textarea } from "@/components/ui/textarea";
+import { Separator } from "@/components/ui/separator";
+import { ArrowLeft, MapPin, Store, CreditCard, Wallet, Banknote } from "lucide-react";
+import { toast } from "@/hooks/use-toast";
 
 const Checkout = () => {
   const navigate = useNavigate();
   const { items, totalPrice, clearCart } = useCart();
-  const [orderType, setOrderType] = useState<'delivery' | 'pickup'>('delivery');
-  const [paymentMethod, setPaymentMethod] = useState<'stripe' | 'mobile-money' | 'cash'>('stripe');
+  const [orderType, setOrderType] = useState<"delivery" | "pickup">("delivery");
+  const [paymentMethod, setPaymentMethod] = useState<"stripe" | "mobile-money" | "cash">("stripe");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const deliveryFee = orderType === 'delivery' ? 20 : 0;
+  const deliveryFee = orderType === "delivery" ? 20 : 0;
   const finalTotal = totalPrice + deliveryFee;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
+
     // Check if user is logged in (placeholder - will be replaced with actual auth)
     const isLoggedIn = false; // This will be replaced with actual auth check
-    
+
     if (!isLoggedIn) {
       toast({
         title: "Sign in required",
         description: "Please sign in to complete your order",
       });
-      navigate('/signin?redirect=/checkout');
+      navigate("/signin?redirect=/checkout");
       return;
     }
 
@@ -47,13 +47,13 @@ const Checkout = () => {
         description: "You will receive a confirmation shortly",
       });
       clearCart();
-      navigate('/order-tracking/mock-order-id');
+      navigate("/order-tracking/mock-order-id");
       setIsSubmitting(false);
     }, 1500);
   };
 
   if (items.length === 0) {
-    navigate('/cart');
+    navigate("/cart");
     return null;
   }
 
@@ -62,11 +62,7 @@ const Checkout = () => {
       <Navigation />
       <main className="container mx-auto px-4 py-24">
         <div className="max-w-4xl mx-auto">
-          <Button
-            variant="ghost"
-            onClick={() => navigate('/cart')}
-            className="mb-6"
-          >
+          <Button variant="ghost" onClick={() => navigate("/cart")} className="mb-6">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Cart
           </Button>
@@ -89,9 +85,7 @@ const Checkout = () => {
                           <MapPin className="mr-2 h-5 w-5" />
                           <div>
                             <p className="font-medium">Delivery</p>
-                            <p className="text-sm text-muted-foreground">
-                              Delivered to your location (GHS 20.00)
-                            </p>
+                            <p className="text-sm text-muted-foreground">Delivered to your location (GHS 20.00)</p>
                           </div>
                         </Label>
                       </div>
@@ -101,9 +95,7 @@ const Checkout = () => {
                           <Store className="mr-2 h-5 w-5" />
                           <div>
                             <p className="font-medium">In-Store Pickup</p>
-                            <p className="text-sm text-muted-foreground">
-                              Collect from restaurant (Free)
-                            </p>
+                            <p className="text-sm text-muted-foreground">Collect from restaurant (Free)</p>
                           </div>
                         </Label>
                       </div>
@@ -112,7 +104,7 @@ const Checkout = () => {
                 </Card>
 
                 {/* Delivery Details */}
-                {orderType === 'delivery' && (
+                {orderType === "delivery" && (
                   <Card>
                     <CardHeader>
                       <CardTitle>Delivery Address</CardTitle>
@@ -120,7 +112,12 @@ const Checkout = () => {
                     <CardContent className="space-y-4">
                       <div className="space-y-2">
                         <Label htmlFor="address">Street Address</Label>
-                        <Input id="address" placeholder="Enter your delivery address" required />
+                        <Input
+                          id="address"
+                          placeholder="Enter your delivery address"
+                          className="placeholder:text-muted"
+                          required
+                        />
                       </div>
                       <div className="grid grid-cols-2 gap-4">
                         <div className="space-y-2">
@@ -129,13 +126,20 @@ const Checkout = () => {
                         </div>
                         <div className="space-y-2">
                           <Label htmlFor="phone">Phone Number</Label>
-                          <Input id="phone" type="tel" placeholder="+233..." required />
+                          <Input
+                            id="phone"
+                            type="tel"
+                            placeholder="+233..."
+                            required
+                            className="placeholder:text-muted"
+                          />
                         </div>
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="instructions">Delivery Instructions (Optional)</Label>
-                        <Textarea 
-                          id="instructions" 
+                        <Textarea
+                          className="placeholder:text-muted"
+                          id="instructions"
                           placeholder="Add any special instructions for delivery..."
                           rows={3}
                         />
@@ -144,9 +148,7 @@ const Checkout = () => {
                         <MapPin className="mr-2 h-4 w-4" />
                         Select Location on Map
                       </Button>
-                      <p className="text-sm text-muted-foreground">
-                        Map integration will be available soon
-                      </p>
+                      <p className="text-sm text-muted-foreground">Map integration will be available soon</p>
                     </CardContent>
                   </Card>
                 )}
@@ -160,16 +162,16 @@ const Checkout = () => {
                     <div className="grid grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="firstName">First Name</Label>
-                        <Input id="firstName" required />
+                        <Input id="firstName" required className="placeholder:text-muted" />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="lastName">Last Name</Label>
-                        <Input id="lastName" required />
+                        <Input id="lastName" required className="placeholder:text-muted" />
                       </div>
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="email">Email</Label>
-                      <Input id="email" type="email" required />
+                      <Input id="email" type="email" required className="placeholder:text-muted" />
                     </div>
                   </CardContent>
                 </Card>
@@ -254,13 +256,8 @@ const Checkout = () => {
                       <span>GHS {finalTotal.toFixed(2)}</span>
                     </div>
 
-                    <Button 
-                      type="submit"
-                      className="w-full mt-6"
-                      size="lg"
-                      disabled={isSubmitting}
-                    >
-                      {isSubmitting ? 'Processing...' : 'Place Order'}
+                    <Button type="submit" className="w-full mt-6" size="lg" disabled={isSubmitting}>
+                      {isSubmitting ? "Processing..." : "Place Order"}
                     </Button>
 
                     <p className="text-xs text-muted-foreground text-center mt-4">
