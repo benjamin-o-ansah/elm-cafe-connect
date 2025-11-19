@@ -91,7 +91,7 @@ const Promotions = () => {
         </div>
 
         <div className="relative z-10 text-center animate-fade-in">
-          <Percent className="h-16 w-16 text-primary-foreground-foreground mx-auto mb-4 animate-pulse" />
+          <Percent className="h-16 w-16 text-primary-foreground mx-auto mb-4 animate-pulse" />
           <h1 className="text-5xl md:text-6xl font-bold text-primary-foreground mb-4">Special Offers & Promotions</h1>
           <p className="text-xl text-primary-foreground">Enjoy great savings on your favorite dishes and beverages</p>
         </div>
