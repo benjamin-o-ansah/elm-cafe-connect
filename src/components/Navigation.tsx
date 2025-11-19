@@ -97,6 +97,11 @@ const Navigation = () => {
                 Sign In
               </Button>
             </Link>
+            <Link to="/dashboard">
+              <Button variant="outline" size="sm" className="backdrop-blur-md text-primary-foreground">
+                Dashboard
+              </Button>
+            </Link>
             <Link to="/signup">
               <Button  variant="outline" size="sm" className="backdrop-blur-md text-primary-foreground">
                 Order Now
@@ -145,6 +150,11 @@ const Navigation = () => {
               <Link to="/signin" onClick={() => setIsOpen(false)}>
                 <Button variant="outline" className="w-full text-primary-foreground">
                   Sign In
+                </Button>
+              </Link>
+              <Link to="/dashboard" onClick={() => setIsOpen(false)}>
+                <Button variant="outline" className="w-full text-primary-foreground">
+                  Dashboard
                 </Button>
               </Link>
               <Link to="/signup" onClick={() => setIsOpen(false)}>
