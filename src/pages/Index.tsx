@@ -36,7 +36,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background relative">
       <div
-        className="fixed inset-0 opacity-2 pointer-events-none"
+        className="fixed inset-0 opacity-5 pointer-events-none"
         style={{ backgroundImage: `url(${elegantBg})`, backgroundSize: "cover", backgroundAttachment: "fixed" }}
       />
       <Navigation />
@@ -47,7 +47,7 @@ const Index = () => {
           <source src={homeBgVid} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-cover bg-center">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-primary/10" />
         </div>
 
         <div className="relative z-10 container mx-auto px-4 text-center animate-fade-in">
