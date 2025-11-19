@@ -36,7 +36,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background relative">
       <div
-        className="fixed inset-0 opacity-5 pointer-events-none"
+        className="fixed inset-0 opacity-2 pointer-events-none"
         style={{ backgroundImage: `url(${elegantBg})`, backgroundSize: "cover", backgroundAttachment: "fixed" }}
       />
       <Navigation />
@@ -120,12 +120,11 @@ const Index = () => {
                     <p className="text-muted-foreground mb-2">Accra, Ghana</p>
                     <p className="text-foreground font-medium pb-4">+233 59 281 6692</p>
                     <Link to="/contact">
-              <Button size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8">
-                View on Map
-              </Button>
-            </Link>
+                      <Button size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8">
+                        View on Map
+                      </Button>
+                    </Link>
                   </div>
-                 
                 </div>
               </CardContent>
             </Card>
@@ -138,16 +137,13 @@ const Index = () => {
                     <h3 className="text-xl font-semibold text-primary mb-2">The Lennox</h3>
                     <p className="text-muted-foreground mb-2">Accra, Ghana</p>
                     <p className="text-foreground font-medium pb-4">+233 53 044 1580</p>
-                     <Link to="/contact">
+                    <Link to="/contact">
                       <Button size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8">
-                      View On Map
-                    </Button>
+                        View On Map
+                      </Button>
                     </Link>
                   </div>
-                  <div>
-                    
-                  </div>
-                 
+                  <div></div>
                 </div>
               </CardContent>
             </Card>
