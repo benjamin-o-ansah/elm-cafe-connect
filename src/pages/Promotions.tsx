@@ -75,9 +75,9 @@ const Promotions = () => {
 
   return (
     <div className="min-h-screen bg-background relative">
-      <div 
+      <div
         className="fixed inset-0 opacity-5 pointer-events-none"
-        style={{ backgroundImage: `url(${elegantBg})`, backgroundSize: 'cover', backgroundAttachment: 'fixed' }}
+        style={{ backgroundImage: `url(${elegantBg})`, backgroundSize: "cover", backgroundAttachment: "fixed" }}
       />
       <Navigation />
 
@@ -92,12 +92,8 @@ const Promotions = () => {
 
         <div className="relative z-10 text-center animate-fade-in">
           <Percent className="h-16 w-16 text-primary-foreground-foreground mx-auto mb-4 animate-pulse" />
-          <h1 className="text-5xl md:text-6xl font-bold text-primary-foreground-foreground mb-4">
-            Special Offers & Promotions
-          </h1>
-          <p className="text-xl text-primary-foreground-foreground/90">
-            Enjoy great savings on your favorite dishes and beverages
-          </p>
+          <h1 className="text-5xl md:text-6xl font-bold text-primary-foreground mb-4">Special Offers & Promotions</h1>
+          <p className="text-xl text-primary-foreground">Enjoy great savings on your favorite dishes and beverages</p>
         </div>
       </section>
 
@@ -129,9 +125,7 @@ const Promotions = () => {
                     <Clock className="h-3 w-3 mr-1" />
                     {promo.validUntil}
                   </Badge>
-                  {promo.active && (
-                    <Badge className="bg-green-500 text-muted">Active</Badge>
-                  )}
+                  {promo.active && <Badge className="bg-green-500 text-muted">Active</Badge>}
                 </div>
               </CardContent>
             </Card>
@@ -153,7 +147,9 @@ const Promotions = () => {
             >
               <CardContent className="pt-6">
                 <div className="flex items-start gap-4">
-                  <div className={`${offer.color} bg-muted p-3 rounded-full transition-transform duration-300 group-hover:scale-110`}>
+                  <div
+                    className={`${offer.color} bg-muted p-3 rounded-full transition-transform duration-300 group-hover:scale-110`}
+                  >
                     <offer.icon className="h-8 w-8" />
                   </div>
                   <div className="flex-1">
@@ -175,12 +171,10 @@ const Promotions = () => {
         {/* Newsletter Signup CTA */}
         <div className="bg-gradient-to-r from-background to-secondary rounded-2xl p-12 text-center animate-fade-in-up">
           <Gift className="h-16 w-16 text-primary-foreground mx-auto mb-6" />
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
-            Never Miss a Deal
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">Never Miss a Deal</h2>
           <p className="text-primary-foreground/90 text-lg mb-8 max-w-2xl mx-auto">
-            Sign up for our newsletter to receive exclusive offers, seasonal promotions, and be the first to
-            know about our special events
+            Sign up for our newsletter to receive exclusive offers, seasonal promotions, and be the first to know about
+            our special events
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
             <input
