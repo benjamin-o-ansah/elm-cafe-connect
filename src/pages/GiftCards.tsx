@@ -12,6 +12,7 @@ import StepsGuide from "@/components/StepsGuide";
 import AIChatbot from "@/components/AIChatbot";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import giftCardHero from "@/assets/gift-card-hero.jpg";
+import elegantBg from "@/assets/bg-img.png";
 
 const GiftCards = () => {
   const [selectedAmount, setSelectedAmount] = useState<number | null>(null);
@@ -26,15 +27,20 @@ const GiftCards = () => {
 
   return (
     <div className="min-h-screen bg-background relative">
+      <div 
+        className="fixed inset-0 opacity-5 pointer-events-none"
+        style={{ backgroundImage: `url(${elegantBg})`, backgroundSize: 'cover', backgroundAttachment: 'fixed' }}
+      />
       <Navigation />
 
       {/* Hero Section */}
       <section 
-        className="pt-32 pb-16 relative bg-cover bg-center"
+        className="pt-32 pb-16 relative h-[700px] bg-cover bg-center"
         style={{ backgroundImage: `url(${giftCardHero})` }}
       >
+
         <div className="absolute inset-0 bg-primary/70" />
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 relative  z-10">
           <div className="max-w-3xl mx-auto text-center animate-fade-in">
             <Gift className="h-16 w-16 text-white mx-auto mb-6 animate-pulse" />
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">Gift Cards & Vouchers</h1>
@@ -47,7 +53,7 @@ const GiftCards = () => {
 
       {/* Main Content */}
       <section className="pb-16 container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto mt-6">
           {/* Purchase Form */}
           <Card className="animate-scale-in">
             <CardHeader>
@@ -70,7 +76,7 @@ const GiftCards = () => {
                         }}
                         className={`p-4 rounded-lg border-2 font-semibold transition-all duration-300 hover:scale-105 ${
                           selectedAmount === amount
-                            ? "border-accent bg-accent text-accent-foreground"
+                            ? "border-accent bg-background/90 text-accent-foreground"
                             : "border-border hover:border-accent"
                         }`}
                       >
@@ -88,7 +94,7 @@ const GiftCards = () => {
                         setSelectedAmount(null);
                       }}
                       min="20"
-                      className="transition-all duration-300 focus:scale-105"
+                      className="transition-all duration-300 focus:scale-105 placeholder:text-muted"
                     />
                   </div>
                 </div>
@@ -102,17 +108,17 @@ const GiftCards = () => {
                   <Input
                     placeholder="Recipient Name"
                     required
-                    className="transition-all duration-300 focus:scale-105"
+                    className="transition-all duration-300 focus:scale-105 placeholder:text-muted text-muted"
                   />
                   <Input
                     type="email"
                     placeholder="Recipient Email"
                     required
-                    className="transition-all duration-300 focus:scale-105"
+                    className="transition-all duration-300 focus:scale-105 placeholder:text-muted text-muted"
                   />
                   <Textarea
                     placeholder="Personal Message (Optional)"
-                    className="min-h-[100px] transition-all duration-300 focus:scale-105"
+                    className="min-h-[100px] transition-all duration-300 focus:scale-105 placeholder:text-muted text-muted"
                   />
                 </div>
 
@@ -125,13 +131,13 @@ const GiftCards = () => {
                   <Input
                     placeholder="Your Name"
                     required
-                    className="transition-all duration-300 focus:scale-105"
+                    className="transition-all duration-300 focus:scale-105 placeholder:text-muted text-muted"
                   />
                   <Input
                     type="email"
                     placeholder="Your Email"
                     required
-                    className="transition-all duration-300 focus:scale-105"
+                    className="transition-all duration-300 focus:scale-105 placeholder:text-muted text-muted"
                   />
                 </div>
 
@@ -152,7 +158,7 @@ const GiftCards = () => {
 
                 <Button
                   type="submit"
-                  className="w-full bg-accent hover:bg-accent/90 text-accent-foreground hover:scale-105 transition-all duration-300"
+                  className="w-full bg-background/90 hover:bg-accent/90 text-accent-foreground hover:scale-105 transition-all duration-300"
                   size="lg"
                   disabled={!selectedAmount && !customAmount}
                 >
@@ -242,7 +248,7 @@ const GiftCards = () => {
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-3">Terms & Conditions</h3>
                 <ul className="text-sm text-muted-foreground space-y-2">
-                  <li>• Gift cards can be used at any Elm CafeGh location</li>
+                  <li>• Gift cards can be used at any Elm Cafe location</li>
                   <li>• No expiration date - use anytime</li>
                   <li>• Non-refundable and cannot be exchanged for cash</li>
                   <li>• Can be combined with other promotions</li>

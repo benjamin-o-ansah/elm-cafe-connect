@@ -33,14 +33,14 @@ const Gallery = () => {
       <Navigation />
 
       {/* Hero Section with Video Background */}
-      <section className="relative h-[70vh] overflow-hidden">
+      <section className="relative h-[700px] overflow-hidden">
         <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
           <source
             src={demoVideo}
             type="video/mp4"
           />
         </video>
-        <div className="absolute inset-0 bg-primary/40" />
+        <div className="absolute inset-0 bg-primary/20" />
         <div className="relative container mx-auto px-4 h-full flex items-center justify-center">
           <div className="max-w-3xl mx-auto text-center animate-fade-in">
             <h1 className="text-5xl md:text-6xl font-bold text-primary-foreground mb-6">Our Gallery</h1>
@@ -85,7 +85,7 @@ const Gallery = () => {
 
       {/* Photo Gallery */}
       <section className="pt-10 pb-16 container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-primary text-center mb-12 animate-fade-in-up">Photo Gallery</h2>
+        <h2 className="text-3xl font-bold text-muted text-center mb-12 animate-fade-in-up">Photo Gallery</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {galleryImages.map((image, index) => (
             <Card

@@ -47,11 +47,8 @@ const Index = () => {
           <source src={homeBgVid} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-cover bg-center">
-<<<<<<< HEAD
           <div className="absolute inset-0 bg-gradient-to-r from-secondary/10 to-background/30" />
-=======
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/40 to-primary/40" />
->>>>>>> 55261e3932fa432a86aa5e8bf913531f6e8f476b
+
         </div>
 
         <div className="relative z-10 container mx-auto px-4 text-center animate-fade-in">

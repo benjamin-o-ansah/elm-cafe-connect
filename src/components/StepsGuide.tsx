@@ -16,7 +16,7 @@ interface StepsGuideProps {
 const StepsGuide = ({ title, steps }: StepsGuideProps) => {
   return (
     <section className="py-12">
-      <h2 className="text-3xl font-bold text-primary mb-8 text-center">{title}</h2>
+      <h2 className="text-3xl font-bold text-muted mb-8 text-center">{title}</h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {steps.map((step) => (
           <Card key={step.number} className="border-border hover:shadow-lg transition-all animate-fade-in-up">

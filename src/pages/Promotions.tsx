@@ -6,7 +6,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import promoBanner from "@/assets/promo-banner.jpg";
-import elegantBg from "@/assets/elegant-background.jpg";
+import elegantBg from "@/assets/bg-img.png";
 
 const Promotions = () => {
   const currentPromotions = [
@@ -82,20 +82,20 @@ const Promotions = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative h-[400px] flex items-center justify-center overflow-hidden mt-16">
+      <section className="relative h-[700px] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105"
           style={{ backgroundImage: `url(${promoBanner})` }}
         >
-          <div className="absolute inset-0 bg-primary/70" />
+          <div className="absolute inset-0 bg-primary/40" />
         </div>
 
         <div className="relative z-10 text-center animate-fade-in">
-          <Percent className="h-16 w-16 text-primary-foreground mx-auto mb-4 animate-pulse" />
-          <h1 className="text-5xl md:text-6xl font-bold text-primary-foreground mb-4">
+          <Percent className="h-16 w-16 text-primary-foreground-foreground mx-auto mb-4 animate-pulse" />
+          <h1 className="text-5xl md:text-6xl font-bold text-primary-foreground-foreground mb-4">
             Special Offers & Promotions
           </h1>
-          <p className="text-xl text-primary-foreground/90">
+          <p className="text-xl text-primary-foreground-foreground/90">
             Enjoy great savings on your favorite dishes and beverages
           </p>
         </div>
@@ -104,8 +104,8 @@ const Promotions = () => {
       {/* Current Promotions */}
       <section className="py-16 container mx-auto px-4">
         <div className="text-center mb-12 animate-fade-in-up">
-          <h2 className="text-4xl font-bold text-primary mb-4">Current Promotions</h2>
-          <p className="text-muted-foreground text-lg">Take advantage of these amazing deals today</p>
+          <h2 className="text-4xl font-bold text-primary-foreground mb-4">Current Promotions</h2>
+          <p className="text-muted text-lg">Take advantage of these amazing deals today</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
@@ -130,7 +130,7 @@ const Promotions = () => {
                     {promo.validUntil}
                   </Badge>
                   {promo.active && (
-                    <Badge className="bg-green-500 text-white">Active</Badge>
+                    <Badge className="bg-green-500 text-muted">Active</Badge>
                   )}
                 </div>
               </CardContent>
@@ -140,8 +140,8 @@ const Promotions = () => {
 
         {/* Seasonal Offers */}
         <div className="text-center mb-12 animate-fade-in-up">
-          <h2 className="text-3xl font-bold text-primary mb-4">Seasonal & Special Offers</h2>
-          <p className="text-muted-foreground text-lg">Limited-time deals you don't want to miss</p>
+          <h2 className="text-3xl font-bold text-primary-foreground mb-4">Seasonal & Special Offers</h2>
+          <p className="text-muted text-lg">Limited-time deals you don't want to miss</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
@@ -159,7 +159,7 @@ const Promotions = () => {
                   <div className="flex-1">
                     <div className="flex justify-between items-start mb-2">
                       <h3 className="text-xl font-semibold text-primary">{offer.title}</h3>
-                      <Badge className="bg-accent text-accent-foreground">{offer.discount}</Badge>
+                      <Badge className="bg-accent text-muted">{offer.discount}</Badge>
                     </div>
                     <p className="text-muted-foreground mb-3">{offer.description}</p>
                     <Badge variant="outline" className="text-xs">
@@ -173,7 +173,7 @@ const Promotions = () => {
         </div>
 
         {/* Newsletter Signup CTA */}
-        <div className="bg-gradient-to-r from-primary to-accent rounded-2xl p-12 text-center animate-fade-in-up">
+        <div className="bg-gradient-to-r from-background to-secondary rounded-2xl p-12 text-center animate-fade-in-up">
           <Gift className="h-16 w-16 text-primary-foreground mx-auto mb-6" />
           <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
             Never Miss a Deal
@@ -188,7 +188,7 @@ const Promotions = () => {
               placeholder="Enter your email"
               className="px-4 py-3 rounded-lg flex-1 text-foreground"
             />
-            <Button className="bg-background text-primary hover:bg-background/90 px-8">Subscribe</Button>
+            <Button className="bg-background text-primary-foreground hover:bg-background/90 px-8">Subscribe</Button>
           </div>
         </div>
       </section>

@@ -14,15 +14,15 @@ import kitchenBts from "@/assets/kitchen-bts.jpg";
 import ingredientPrep from "@/assets/ingredient-prep.jpg";
 import platingArt from "@/assets/plating-art.jpg";
 import winePairing from "@/assets/wine-pairing.jpg";
-import elegantBg from "@/assets/elegant-background.jpg";
+import elegantBg from "@/assets/bg-img.png";
 
 const ChefsCorner = () => {
   const chefs = [
     {
-      name: "Chef Kwame Osei",
-      role: "Executive Chef",
+      name: "Chef Richard Cobbinah Johnson",
+      role: "Chef de Parte",
       image: chefKwame,
-      bio: "With over 15 years of culinary excellence, Chef Kwame brings a fusion of traditional Ghanaian flavors and contemporary techniques to Elm Café. Born in Kumasi and trained at Le Cordon Bleu Paris, he returned to Ghana with a mission to elevate local cuisine to international standards.",
+      bio: "With over 7 years of culinary excellence, Chef Kwame brings a fusion of traditional Ghanaian flavors and contemporary techniques to Elm Café. Born in Kumasi and trained at Le Cordon Bleu Paris, he returned to Ghana with a mission to elevate local cuisine to international standards.",
       specialty: "Contemporary African Cuisine",
       philosophy: "Food is not just sustenance; it's a bridge between cultures, generations, and memories. I believe in honoring our rich Ghanaian heritage while embracing modern culinary innovations. Every dish tells a story of the land, the farmers, and the traditions that shaped it.",
       signature: "Heritage Jollof Rice with Grilled Prawns",
@@ -144,7 +144,7 @@ const ChefsCorner = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${chefHero})` }}
@@ -155,7 +155,7 @@ const ChefsCorner = () => {
           <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6">
             Chef's Corner
           </h1>
-          <p className="text-xl md:text-2xl text-primary-foreground/90 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-primary-foreground/10 max-w-3xl mx-auto">
             Meet the culinary artists behind Elm Café's extraordinary dining experience
           </p>
         </div>
@@ -164,15 +164,15 @@ const ChefsCorner = () => {
       {/* Our Culinary Philosophy */}
       <section className="py-20 container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl font-bold text-primary mb-6">Our Culinary Philosophy</h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
+          <h2 className="text-4xl font-bold text-muted mb-6">Our Culinary Philosophy</h2>
+          <p className="text-lg text-muted leading-relaxed">
             At Elm Café, we believe that exceptional food starts with exceptional ingredients. Our chefs work closely with local farmers and suppliers to source the freshest, most sustainable ingredients. Every dish tells a story of quality, sustainability, and the rich culinary heritage of Ghana, reimagined for the modern palate.
           </p>
         </div>
 
         {/* Chef Profiles with Photos and Interviews */}
         <div className="mb-20">
-          <h2 className="text-4xl font-bold text-primary mb-12 text-center">Meet Our Culinary Team</h2>
+          <h2 className="text-4xl font-bold text-muted mb-12 text-center">Meet Our Culinary Team</h2>
           <div className="space-y-12">
             {chefs.map((chef, index) => (
               <Card key={index} className="border-border overflow-hidden hover:shadow-xl transition-all animate-scale-in">
@@ -241,7 +241,7 @@ const ChefsCorner = () => {
 
         {/* Behind-the-Scenes Content */}
         <div className="mb-20">
-          <h2 className="text-4xl font-bold text-primary mb-12 text-center">Behind the Scenes</h2>
+          <h2 className="text-4xl font-bold text-muted mb-12 text-center">Behind the Scenes</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {behindTheScenes.map((item, index) => (
               <Card key={index} className="border-border overflow-hidden hover:shadow-xl transition-all animate-fade-in-up">
@@ -275,7 +275,7 @@ const ChefsCorner = () => {
 
         {/* Signature Dish Deep Dives */}
         <div className="mb-20">
-          <h2 className="text-4xl font-bold text-primary mb-12 text-center">Signature Dish Deep Dives</h2>
+          <h2 className="text-4xl font-bold text-primary-foreground mb-12 text-center">Signature Dish Deep Dives</h2>
           <div className="max-w-5xl mx-auto space-y-8">
             {signatureDishes.map((dish, index) => (
               <Card key={index} className="border-border hover:shadow-xl transition-all animate-fade-in overflow-hidden">
@@ -347,8 +347,8 @@ const ChefsCorner = () => {
 
         {/* Recipe Spotlights */}
         <div className="mb-20">
-          <h2 className="text-4xl font-bold text-primary mb-12 text-center">Recipe Spotlights</h2>
-          <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold text-primary-foreground mb-12 text-center">Recipe Spotlights</h2>
+          <p className="text-center text-muted mb-8 max-w-2xl mx-auto">
             Learn key techniques from our chefs that you can try at home. These simplified versions focus on mastering essential skills.
           </p>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -357,8 +357,8 @@ const ChefsCorner = () => {
                 <CardHeader>
                   <CardTitle className="text-xl">{recipe.title}</CardTitle>
                   <div className="flex gap-4 pt-2">
-                    <Badge variant="secondary">{recipe.difficulty}</Badge>
-                    <Badge variant="outline">{recipe.time}</Badge>
+                    <Badge variant="secondary" className="text-primary-foreground">{recipe.difficulty}</Badge>
+                    <Badge variant="default" className="text-primary-foreground">{recipe.time}</Badge>
                   </div>
                 </CardHeader>
                 <CardContent>
@@ -415,7 +415,7 @@ const ChefsCorner = () => {
                   <p className="text-sm text-muted-foreground">Private dining in our kitchen with chef interaction</p>
                 </div>
               </div>
-              <Button size="lg" className="animate-scale-in" asChild>
+              <Button size="lg" className="animate-scale-in bg-background" asChild>
                 <a href="/events">View Upcoming Events & Book Now</a>
               </Button>
             </CardContent>

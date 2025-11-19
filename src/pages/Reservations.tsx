@@ -11,7 +11,7 @@ import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
 import StepsGuide from "@/components/StepsGuide";
 import restaurantInterior from "@/assets/restaurant-interior.jpg";
-import elegantBg from "@/assets/elegant-background.jpg";
+import elegantBg from "@/assets/bg-img.png";
 import { Calendar as CalendarIcon2, Users as Users2, MessageSquare as MessageSquare2, CheckCircle } from "lucide-react";
 
 const Reservations = () => {
@@ -30,6 +30,8 @@ const Reservations = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const setState = useState(false)
+
   const handleSubmit = (e: React.FormEvent, type: string) => {
     e.preventDefault();
     alert(`${type} reservation request submitted! We'll confirm via email shortly.`);
@@ -44,17 +46,17 @@ const Reservations = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative h-[400px] flex items-center justify-center overflow-hidden mt-16">
+      <section className="relative h-[700px] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105"
           style={{ backgroundImage: `url(${restaurantInterior})` }}
         >
-          <div className="absolute inset-0 bg-primary/85" />
+          <div className="absolute inset-0 bg-foreground/20" />
         </div>
 
         <div className="relative z-10 text-center animate-fade-in">
           <h1 className="text-5xl md:text-6xl font-bold text-primary-foreground mb-4">Reserve Your Table</h1>
-          <p className="text-xl text-primary-foreground/90">Experience exceptional dining at Elm CafeGh</p>
+          <p className="text-xl text-primary-foreground/90">Experience exceptional dining at Elm Cafe</p>
         </div>
       </section>
 
@@ -62,10 +64,12 @@ const Reservations = () => {
       <section className="py-16 container mx-auto px-4">
         <Tabs defaultValue="regular" className="max-w-4xl mx-auto">
           <TabsList className="grid w-full grid-cols-2 mb-8 animate-fade-in-up">
-            <TabsTrigger value="regular" className="transition-all duration-300">
+            <TabsTrigger value="regular" className="
+            data-[state=active]:text-primary-foreground
+            transition-all duration-300 text-primary">
               Regular Dining
             </TabsTrigger>
-            <TabsTrigger value="private" className="transition-all duration-300">
+            <TabsTrigger value="private" className="transition-all duration-300 text-primary data-[state=active]:text-primary-foreground">
               Private & Corporate
             </TabsTrigger>
           </TabsList>
@@ -91,7 +95,7 @@ const Reservations = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="transition-all duration-300 focus:scale-105"
+                        className="transition-all duration-300 focus:scale-105 text-primary-foreground placeholder:text-primary-foreground"
                       />
                     </div>
                     <div className="space-y-2">
@@ -106,7 +110,7 @@ const Reservations = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="transition-all duration-300 focus:scale-105"
+                        className="transition-all duration-300 focus:scale-105 text-primary-foreground placeholder:text-primary-foreground"
                       />
                     </div>
                   </div>
@@ -124,15 +128,15 @@ const Reservations = () => {
                         value={formData.phone}
                         onChange={handleChange}
                         required
-                        className="transition-all duration-300 focus:scale-105"
+                        className="transition-all duration-300 focus:scale-105 text-primary-foreground placeholder:text-primary-foreground"
                       />
                     </div>
                     <div className="space-y-2">
                       <label htmlFor="location" className="text-sm font-medium">
                         Location *
                       </label>
-                      <Select name="location" required>
-                        <SelectTrigger className="transition-all duration-300 focus:scale-105">
+                      <Select name="location" required >
+                        <SelectTrigger className="transition-all duration-300 focus:scale-105 text-primary-foreground">
                           <SelectValue placeholder="Select location" />
                         </SelectTrigger>
                         <SelectContent>
@@ -156,7 +160,7 @@ const Reservations = () => {
                         value={formData.date}
                         onChange={handleChange}
                         required
-                        className="transition-all duration-300 focus:scale-105"
+                        className="transition-all duration-300 focus:scale-105 text-primary-foreground"
                       />
                     </div>
                     <div className="space-y-2">
@@ -170,8 +174,9 @@ const Reservations = () => {
                         type="time"
                         value={formData.time}
                         onChange={handleChange}
+                        placeholder=""
                         required
-                        className="transition-all duration-300 focus:scale-105"
+                        className="transition-all duration-300 focus:scale-105 text-primary-foreground"
                       />
                     </div>
                     <div className="space-y-2">
@@ -180,7 +185,7 @@ const Reservations = () => {
                         Guests *
                       </label>
                       <Select name="guests" required>
-                        <SelectTrigger className="transition-all duration-300 focus:scale-105">
+                        <SelectTrigger className="transition-all duration-300 focus:scale-105 text-primary-foreground">
                           <SelectValue placeholder="Number" />
                         </SelectTrigger>
                         <SelectContent>
@@ -195,7 +200,7 @@ const Reservations = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <label htmlFor="specialRequests" className="text-sm font-medium flex items-center gap-2">
+                    <label htmlFor="specialRequests" className="text-sm  font-medium flex items-center gap-2">
                       <MessageSquare className="h-4 w-4 text-accent" />
                       Special Requests
                     </label>
@@ -205,13 +210,13 @@ const Reservations = () => {
                       placeholder="Any dietary restrictions, occasion, or special requirements..."
                       value={formData.specialRequests}
                       onChange={handleChange}
-                      className="min-h-[100px] transition-all duration-300 focus:scale-105"
+                      className="min-h-[100px] transition-all duration-300 focus:scale-105 placeholder:text-primary-foreground text-primary-foreground"
                     />
                   </div>
 
                   <Button
                     type="submit"
-                    className="w-full bg-accent hover:bg-accent/90 text-accent-foreground hover:scale-105 transition-all duration-300"
+                    className="w-full bg-background hover:bg-background/90 text-accent-foreground hover:scale-105 transition-all duration-300"
                     size="lg"
                   >
                     Confirm Reservation
@@ -255,7 +260,7 @@ const Reservations = () => {
                         id="private-name"
                         placeholder="Your name"
                         required
-                        className="transition-all duration-300 focus:scale-105"
+                        className="transition-all duration-300 focus:scale-105 text-primary-foreground placeholder:text-primary-foreground"
                       />
                     </div>
                     <div className="space-y-2">
@@ -265,7 +270,7 @@ const Reservations = () => {
                       <Input
                         id="private-company"
                         placeholder="Company name (optional)"
-                        className="transition-all duration-300 focus:scale-105"
+                        className="transition-all duration-300 focus:scale-105 text-primary-foreground placeholder:text-primary-foreground"
                       />
                     </div>
                   </div>
@@ -280,7 +285,7 @@ const Reservations = () => {
                         type="email"
                         placeholder="your@email.com"
                         required
-                        className="transition-all duration-300 focus:scale-105"
+                        className="transition-all duration-300 focus:scale-105 text-primary-foreground placeholder:text-primary-foreground"
                       />
                     </div>
                     <div className="space-y-2">
@@ -292,21 +297,21 @@ const Reservations = () => {
                         type="tel"
                         placeholder="+233 XX XXX XXXX"
                         required
-                        className="transition-all duration-300 focus:scale-105"
+                        className="transition-all duration-300 focus:scale-105 text-primary-foreground placeholder:text-primary-foreground"
                       />
                     </div>
                   </div>
 
                   <div className="grid md:grid-cols-3 gap-4">
                     <div className="space-y-2">
-                      <label htmlFor="private-date" className="text-sm font-medium">
+                      <label htmlFor="private-date" className="text-sm font-medium text-primary-foreground">
                         Preferred Date *
                       </label>
                       <Input
                         id="private-date"
                         type="date"
                         required
-                        className="transition-all duration-300 focus:scale-105"
+                        className="transition-all duration-300 focus:scale-105 text-primary-foreground placeholder:text-primary-foreground"
                       />
                     </div>
                     <div className="space-y-2">
@@ -319,7 +324,7 @@ const Reservations = () => {
                         placeholder="Number of guests"
                         min="10"
                         required
-                        className="transition-all duration-300 focus:scale-105"
+                        className="transition-all duration-300 focus:scale-105 text-primary-foreground placeholder:text-primary-foreground"
                       />
                     </div>
                     <div className="space-y-2">
@@ -327,7 +332,7 @@ const Reservations = () => {
                         Preferred Location *
                       </label>
                       <Select required>
-                        <SelectTrigger className="transition-all duration-300 focus:scale-105">
+                        <SelectTrigger className="transition-all duration-300 focus:scale-105 text-primary-foreground placeholder:text-primary-foreground">
                           <SelectValue placeholder="Location" />
                         </SelectTrigger>
                         <SelectContent>
@@ -344,7 +349,7 @@ const Reservations = () => {
                       Event Type *
                     </label>
                     <Select required>
-                      <SelectTrigger className="transition-all duration-300 focus:scale-105">
+                      <SelectTrigger className="transition-all duration-300 focus:scale-105 text-primary-foreground placeholder:text-primary-foreground">
                         <SelectValue placeholder="Select event type" />
                       </SelectTrigger>
                       <SelectContent>
@@ -365,14 +370,14 @@ const Reservations = () => {
                     <Textarea
                       id="private-details"
                       placeholder="Please describe your event, catering preferences, AV requirements, special arrangements, budget range, etc."
-                      className="min-h-[150px] transition-all duration-300 focus:scale-105"
+                      className="min-h-[150px] transition-all duration-300 focus:scale-105 text-primary-foreground placeholder:text-primary-foreground"
                       required
                     />
                   </div>
 
                   <Button
                     type="submit"
-                    className="w-full bg-accent hover:bg-accent/90 text-accent-foreground hover:scale-105 transition-all duration-300"
+                    className="w-full bg-background hover:bg-accent/90 text-accent-foreground hover:scale-105 transition-all duration-300"
                     size="lg"
                   >
                     Request Private Event Quote
