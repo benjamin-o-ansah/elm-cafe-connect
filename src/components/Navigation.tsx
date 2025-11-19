@@ -38,18 +38,18 @@ const Navigation = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className="text-foreground hover:text-accent transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-accent after:transition-all hover:after:w-full text-sm"
+                className="text-primary-foreground hover:text-accent transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-accent after:transition-all hover:after:w-full text-sm"
               >
                 {link.name}
               </Link>
             ))}
             <Link to="/signin">
-              <Button variant="outline" size="sm">
+              <Button variant="outline" size="sm" className="backdrop-blur-lg text-primary-foreground">
                 Sign In
               </Button>
             </Link>
             <Link to="/signup">
-              <Button size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+              <Button  variant="outline" size="sm" className="backdrop-blur-md text-primary-foreground">
                 Order Now
               </Button>
             </Link>
@@ -84,12 +84,12 @@ const Navigation = () => {
             ))}
             <div className="flex flex-col gap-2 pt-2 border-t border-border">
               <Link to="/signin" onClick={() => setIsOpen(false)}>
-                <Button variant="outline" className="w-full">
+                <Button variant="outline" className="w-full text-primary-foreground">
                   Sign In
                 </Button>
               </Link>
               <Link to="/signup" onClick={() => setIsOpen(false)}>
-                <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">Order Now</Button>
+                <Button className="w-full bg-accent text-primary-foreground hover:bg-accent/90 text-accent-foreground">Order Now</Button>
               </Link>
             </div>
           </div>

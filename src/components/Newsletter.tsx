@@ -20,7 +20,7 @@ const Newsletter = () => {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-r from-primary to-accent">
+    <section className="py-16">
       <div className="container mx-auto px-4 text-center">
         <Mail className="h-12 w-12 text-primary-foreground mx-auto mb-4" />
         <h2 className="text-3xl font-bold text-primary-foreground mb-4">
@@ -38,7 +38,7 @@ const Newsletter = () => {
             required
             className="bg-background/10 backdrop-blur-sm border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/60"
           />
-          <Button type="submit" className="bg-background text-primary hover:bg-background/90">
+          <Button type="submit" variant="outline" className="bg-background text-primary-foreground hover:bg-accent">
             Subscribe
           </Button>
         </form>

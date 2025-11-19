@@ -18,6 +18,7 @@ import smoothie from "@/assets/menu/smoothie.jpg";
 import chocolateCake from "@/assets/menu/chocolate-cake.jpg";
 import fruitTart from "@/assets/menu/fruit-tart.jpg";
 import bgVideo from "@/assets/burger.mp4";
+import elegantBg from "@/assets/bg-img.png";
 const Menu = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedDietary, setSelectedDietary] = useState<string[]>([]);
@@ -995,7 +996,11 @@ const Menu = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      <div
+        className="fixed inset-0 opacity-5 pointer-events-none"
+        style={{ backgroundImage: `url(${elegantBg})`, backgroundSize: "cover", backgroundAttachment: "fixed" }}
+      />
       <Navigation />
 
       {/* Hero Section */}
@@ -1009,7 +1014,7 @@ const Menu = () => {
             backgroundImage: `url(${menuHero})`,
           }}
         > */}
-          <div className="absolute inset-0 bg-primary/80" />
+          <div className="absolute inset-0 bg-primary/20" />
         {/* </div> */}
 
         <div className="relative z-10 text-center animate-fade-in">
@@ -1037,8 +1042,8 @@ const Menu = () => {
               onClick={() => setSelectedCategory(category)}
               className={
                 selectedCategory === category
-                  ? "bg-accent text-accent-foreground hover:bg-accent/90 transition-all duration-300"
-                  : "hover:scale-105 transition-all duration-300"
+                  ? "bg-secondary text-accent-foreground hover:bg-accent/90 transition-all duration-300"
+                  : "hover:scale-105 transition-all duration-300 text-primary-foreground"
               }
             >
               {getCategoryDisplayName(category)}
@@ -1048,15 +1053,15 @@ const Menu = () => {
 
         {/* Dietary Filter */}
         <div className="flex flex-wrap justify-center gap-3 mb-12 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
-          <span className="text-muted-foreground self-center">Filter by:</span>
+          <span className="text-primary-foreground self-center">Filter by:</span>
           {dietaryOptions.map((option) => (
             <Badge
               key={option}
               variant={selectedDietary.includes(option) ? "default" : "outline"}
               className={`cursor-pointer transition-all duration-300 ${
                 selectedDietary.includes(option)
-                  ? "bg-accent text-accent-foreground hover:bg-accent/90"
-                  : "hover:scale-110"
+                  ? "bg-secondary text-primary-foreground hover:bg-accent/90"
+                  : "hover:scale-110 text-primary-foreground"
               }`}
               onClick={() => toggleDietary(option)}
             >
@@ -1066,10 +1071,10 @@ const Menu = () => {
           {selectedDietary.length > 0 && (
             <Badge
               variant="outline"
-              className="cursor-pointer hover:bg-destructive hover:text-destructive-foreground transition-all duration-300"
+              className="cursor-pointer text-primary-foreground hover:bg-destructive hover:text-destructive-foreground transition-all duration-300"
               onClick={() => setSelectedDietary([])}
             >
-              <X className="h-3 w-3 mr-1" />
+              <X className="h-3 w-3 mr-1 text-primary-foreground" />
               Clear
             </Badge>
           )}
@@ -1097,13 +1102,13 @@ const Menu = () => {
                   <h3 className="text-xl font-semibold text-primary group-hover:text-accent transition-colors duration-300">
                     {item.name}
                   </h3>
-                  <span className="text-lg font-bold text-accent">GHS {item.price}</span>
+                  <span className="text-lg font-bold text-secondary">GHS {item.price}</span>
                 </div>
                 <p className="text-muted-foreground mb-4 line-clamp-2">{item.description}</p>
                 {item.dietary.length > 0 && (
                   <div className="flex flex-wrap gap-2">
                     {item.dietary.map((tag) => (
-                      <Badge key={tag} variant="secondary" className="text-xs">
+                      <Badge key={tag} variant="default" className="text-xs">
                         {tag}
                       </Badge>
                     ))}
@@ -1133,9 +1138,14 @@ const Menu = () => {
 
       {/* Item Detail Modal */}
       <Dialog open={!!selectedItem} onOpenChange={() => setSelectedItem(null)}>
-        <DialogContent className="max-w-2xl animate-scale-in">
+        <DialogContent className="max-w-2xl animate-scale-in bg-cover bg-center bg-no-repeat rounded-xl bg-background/90 opacity-2"
+        style={{
+           backgroundImage: `url(${elegantBg})`,
+        }}
+        
+        >
           <DialogHeader>
-            <DialogTitle className="text-2xl">{selectedItem?.name}</DialogTitle>
+            <DialogTitle className="text-2xl text-primary-foreground">{selectedItem?.name}</DialogTitle>
           </DialogHeader>
           {selectedItem && (
             <div className="space-y-4">
@@ -1145,27 +1155,27 @@ const Menu = () => {
                 className="w-full h-64 object-cover rounded-lg"
               />
               <div className="flex justify-between items-center">
-                <span className="text-2xl font-bold text-accent">GHS {selectedItem.price}</span>
+                <span className="text-2xl font-bold text-primary-foreground">GHS {selectedItem.price}</span>
                 {selectedItem.dietary.length > 0 && (
                   <div className="flex gap-2">
                     {selectedItem.dietary.map((tag: string) => (
-                      <Badge key={tag} variant="secondary">
+                      <Badge key={tag} variant="default">
                         {tag}
                       </Badge>
                     ))}
                   </div>
                 )}
               </div>
-              <p className="text-muted-foreground">{selectedItem.description}</p>
+              <p className="text-primary-foreground">{selectedItem.description}</p>
               <div>
-                <h4 className="font-semibold mb-2">Ingredients:</h4>
-                <ul className="list-disc list-inside text-muted-foreground space-y-1">
+                <h4 className="font-semibold mb-2 text-primary-foreground">Ingredients:</h4>
+                <ul className="list-disc list-inside text-primary-foreground space-y-1">
                   {selectedItem.ingredients.map((ingredient: string, idx: number) => (
                     <li key={idx}>{ingredient}</li>
                   ))}
                 </ul>
               </div>
-              <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
+              <Button className="w-full bg-secondary hover:bg-accent/90 text-accent-foreground">
                 Add to Order
               </Button>
             </div>

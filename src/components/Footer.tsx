@@ -4,7 +4,7 @@ import logo from "@/assets/elm-cafe-logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-primary-foreground py-12 mt-20">
+    <footer className="bg-background/ text-primary-foreground py-12 mt-20">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           {/* Brand */}
@@ -88,23 +88,23 @@ const Footer = () => {
             <h3 className="font-semibold mb-4">Contact</h3>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2">
-                <MapPin className="h-4 w-4 mt-1 text-accent flex-shrink-0" />
+                <MapPin className="h-4 w-4 mt-1 text-secondary flex-shrink-0" />
                 <span className="text-primary-foreground/80">Embassy Gardens, Accra</span>
               </li>
               <li className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-accent flex-shrink-0" />
+                <Phone className="h-4 w-4 text-secondary flex-shrink-0" />
                 <span className="text-primary-foreground/80">+233 59 281 6692</span>
               </li>
               <li className="flex items-start gap-2">
-                <MapPin className="h-4 w-4 mt-1 text-accent flex-shrink-0" />
+                <MapPin className="h-4 w-4 mt-1 text-secondary flex-shrink-0" />
                 <span className="text-primary-foreground/80">The Lennox, Accra</span>
               </li>
               <li className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-accent flex-shrink-0" />
+                <Phone className="h-4 w-4 text-secondary flex-shrink-0" />
                 <span className="text-primary-foreground/80">+233 53 044 1580</span>
               </li>
               <li className="flex items-center gap-2">
-                <Mail className="h-4 w-4 text-accent flex-shrink-0" />
+                <Mail className="h-4 w-4 text-secondary flex-shrink-0" />
                 <a
                   href="mailto:management@elmcafe.com"
                   className="text-primary-foreground/80 hover:text-accent transition-colors"

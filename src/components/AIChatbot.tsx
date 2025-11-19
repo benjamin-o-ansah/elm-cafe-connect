@@ -67,7 +67,7 @@ const AIChatbot = () => {
       {isOpen && (
         <Card className="fixed bottom-24 right-6 w-96 h-[500px] shadow-2xl z-50 flex flex-col animate-scale-in">
           {/* Header */}
-          <div className="bg-accent text-accent-foreground p-4 rounded-t-lg">
+          <div className="bg-background text-primary-foreground p-4 rounded-t-lg">
             <h3 className="font-semibold text-lg">Elm Cafe AI Assistant</h3>
             <p className="text-sm opacity-90">Always here to help</p>
           </div>
@@ -112,9 +112,9 @@ const AIChatbot = () => {
                 value={inputText}
                 onChange={(e) => setInputText(e.target.value)}
                 placeholder="Type your message..."
-                className="flex-1"
+                className="flex-1 text-primary-foreground"
               />
-              <Button type="submit" size="icon" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+              <Button type="submit" size="icon" className="bg-secondary text-primary-foreground hover:bg-background/90 text-primary-foreground">
                 <Send className="h-4 w-4" />
               </Button>
             </div>

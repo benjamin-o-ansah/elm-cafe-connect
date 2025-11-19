@@ -5,8 +5,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
-import heroImage from "@/assets/hero-cafe.jpg";
-import elegantBg from "@/assets/elegant-background.jpg";
+// import heroImage from "@/assets/hero-cafe.jpg";
+import elegantBg from "@/assets/bg-img.png";
 import homeBgVid from "@/assets/home_bg.mp4";
 
 const Index = () => {
@@ -47,12 +47,12 @@ const Index = () => {
           <source src={homeBgVid} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-cover bg-center">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-secondary/10 to-background/30" />
         </div>
 
         <div className="relative z-10 container mx-auto px-4 text-center animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6">Welcome to Elm CafeGh</h1>
-          <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-primary-foreground mb-8 max-w-2xl mx-auto">
             Experience the perfect blend of quality, sustainability, and local flavors in the heart of Accra
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -75,10 +75,10 @@ const Index = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl font-bold text-primary mb-4">Why Choose Elm Cafe ?</h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+      <section className="py-20 container  mx-auto px-4">
+        <div className="text-center mb-16 animate-fade-in-up bg-red">
+          <h2 className="text-4xl font-bold text-primary-foreground mb-4">Why Choose Elm Cafe ?</h2>
+          <p className="text-primary-foreground text-lg max-w-2xl mx-auto">
             We're committed to providing an exceptional dining experience with convenient features designed for you
           </p>
         </div>
@@ -114,7 +114,7 @@ const Index = () => {
             <Card className="hover:shadow-lg transition-shadow">
               <CardContent className="pt-6">
                 <div className="flex items-start gap-4">
-                  <MapPin className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
+                  <MapPin className="h-6 w-6 text-secondary flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="text-xl font-semibold text-primary mb-2">Embassy Gardens</h3>
                     <p className="text-muted-foreground mb-2">Accra, Ghana</p>
@@ -133,7 +133,7 @@ const Index = () => {
             <Card className="hover:shadow-lg transition-shadow">
               <CardContent className="pt-6">
                 <div className="flex items-start gap-4 ">
-                  <MapPin className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
+                  <MapPin className="h-6 w-6 text-secondary flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="text-xl font-semibold text-primary mb-2">The Lennox</h3>
                     <p className="text-muted-foreground mb-2">Accra, Ghana</p>
@@ -157,14 +157,14 @@ const Index = () => {
 
       {/* CTA Section */}
       <section className="py-20 container mx-auto px-4">
-        <div className="bg-gradient-to-r from-primary to-accent rounded-2xl p-12 text-center">
+        <div className="bg-gradient-to-r rounded-2xl p-12 text-center">
           <Coffee className="h-16 w-16 text-primary-foreground mx-auto mb-6" />
           <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">Ready to Experience Elm Cafe?</h2>
           <p className="text-primary-foreground/90 text-lg mb-8 max-w-2xl mx-auto">
             Join us today and discover why we're Accra's favorite cafe destination
           </p>
           <Link to="/signup">
-            <Button size="lg" className="bg-background text-primary hover:bg-background/90 text-lg px-8">
+            <Button size="lg" variant="outline" className="bg-background text-primary-foreground hover:bg-accent text-lg px-8">
               Get Started
             </Button>
           </Link>
