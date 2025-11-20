@@ -68,7 +68,7 @@ const Navigation = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-foreground hover:text-accent transition-colors"
+            className="lg:hidden p-2 text-muted hover:text-accent transition-colors"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -87,7 +87,7 @@ const Navigation = () => {
                 key={link.path}
                 to={link.path}
                 onClick={() => setIsOpen(false)}
-                className="text-foreground hover:text-accent transition-colors py-2"
+                className="text-muted hover:text-accent transition-colors py-2"
               >
                 {link.name}
               </Link>
