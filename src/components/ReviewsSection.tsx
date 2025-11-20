@@ -114,7 +114,7 @@ const ReviewsSection = () => {
       {/* Individual Reviews */}
       <div className="space-y-4">
         <div className="flex items-center justify-between">
-          <h3 className="text-2xl font-bold text-primary">Customer Reviews</h3>
+          <h3 className="text-2xl font-bold text-muted">Customer Reviews</h3>
           <Button className="bg-accent hover:bg-accent/90 text-accent-foreground">Write a Review</Button>
         </div>
 
@@ -174,8 +174,8 @@ const ReviewsSection = () => {
       {/* Share Your Experience CTA */}
       <Card className="bg-muted/50 border-dashed">
         <CardContent className="pt-6 text-center">
-          <h3 className="text-xl font-semibold mb-2">Share Your Experience!</h3>
-          <p className="text-muted-foreground mb-4">
+          <h3 className="text-xl font-semibold mb-2 text-muted">Share Your Experience!</h3>
+          <p className="text-muted mb-4">
             We'd love to hear about your visit to Elm Cafe. Your feedback helps us improve.
           </p>
           <div className="flex gap-3 justify-center">

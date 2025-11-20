@@ -8,7 +8,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Badge } from "@/components/ui/badge";
 import { Wine, Calendar, ChefHat, Lightbulb, PlayCircle } from "lucide-react";
 import chefHero from "@/assets/chef-hero.jpg";
-import chefKwame from "@/assets/chef-kwame.jpg";
+import chefRichard from "@/assets/chef-richard.jpg";
 import chefAma from "@/assets/chef-ama.jpg";
 import kitchenBts from "@/assets/kitchen-bts.jpg";
 import ingredientPrep from "@/assets/ingredient-prep.jpg";
@@ -21,7 +21,7 @@ const ChefsCorner = () => {
     {
       name: "Chef Richard Cobbinah Johnson",
       role: "Chef de Parte",
-      image: chefKwame,
+      image: chefRichard,
       bio: "With over 7 years of culinary excellence, Chef Kwame brings a fusion of traditional Ghanaian flavors and contemporary techniques to Elm Café. Born in Kumasi and trained at Le Cordon Bleu Paris, he returned to Ghana with a mission to elevate local cuisine to international standards.",
       specialty: "Contemporary African Cuisine",
       philosophy: "Food is not just sustenance; it's a bridge between cultures, generations, and memories. I believe in honoring our rich Ghanaian heritage while embracing modern culinary innovations. Every dish tells a story of the land, the farmers, and the traditions that shaped it.",
@@ -149,13 +149,13 @@ const ChefsCorner = () => {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${chefHero})` }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70" />
+          <div className="absolute inset-0 " />
         </div>
         <div className="relative z-10 container mx-auto px-4 text-center animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6">
             Chef's Corner
           </h1>
-          <p className="text-xl md:text-2xl text-primary-foreground/10 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-muted max-w-3xl mx-auto">
             Meet the culinary artists behind Elm Café's extraordinary dining experience
           </p>
         </div>

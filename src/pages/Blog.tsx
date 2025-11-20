@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, User, ArrowRight } from "lucide-react";
 import blogHero from "@/assets/blog-hero.jpg";
-import elegantBg from "@/assets/elegant-background.jpg";
+import elegantBg from "@/assets/bg-img.png";
 
 const Blog = () => {
   const articles = [

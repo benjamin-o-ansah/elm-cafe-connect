@@ -69,17 +69,17 @@ const Navigation = () => {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-sm bg-transparent text-primary-foreground hover:text-accent data-[state=open]:text-accent">
+                  <NavigationMenuTrigger className="text-sm bg-transparent text-muted hover:text-muted data-[state=open]:text-muted">
                     More
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="grid w-[200px] gap-1 p-2 bg-background/95 backdrop-blur-md border border-border">
+                    <ul className="grid w-[200px] gap-1 p-2 bg-background/95 backdrop-blur-md border border-border text-muted">
                       {moreLinks.map((link) => (
                         <li key={link.path}>
                           <NavigationMenuLink asChild>
                             <Link
                               to={link.path}
-                              className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground text-sm"
+                              className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-muted focus:bg-accent focus:text-muted text-sm"
                             >
                               {link.name}
                             </Link>

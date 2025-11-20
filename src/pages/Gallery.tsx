@@ -13,6 +13,7 @@ import restaurantOutlook from "@/assets/intro.jpg";
 import samosaImage from "@/assets/6.jpg";
 import clientShare from "@/assets/11.jpg";
 import tourVideo from '@/assets/home_bg.mp4';
+import elegantBg from '@/assets/bg-img.png';
 import demoVideo from '@/assets/demo.mp4';
 
 const Gallery = () => {
@@ -30,6 +31,10 @@ const Gallery = () => {
 
   return (
     <div className="min-h-screen bg-background">
+       <div
+              className="fixed inset-0 opacity-5 pointer-events-none"
+              style={{ backgroundImage: `url(${elegantBg})`, backgroundSize: "cover", backgroundAttachment: "fixed" }}
+            />
       <Navigation />
 
       {/* Hero Section with Video Background */}

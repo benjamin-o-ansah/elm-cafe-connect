@@ -5,9 +5,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
+import posterimg from  "@/assets/4.jpg";
 // import heroImage from "@/assets/hero-cafe.jpg";
 import elegantBg from "@/assets/bg-img.png";
-import homeBgVid from "@/assets/home_bg.mp4";
+import homeBgVid from "@/assets/home_bg_2.mp4";
 
 const Index = () => {
   const features = [
@@ -43,11 +44,11 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
+        <video autoPlay loop muted playsInline preload="metadata" className="absolute inset-0 w-full h-full object-cover">
           <source src={homeBgVid} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-cover bg-center">
-          <div className="absolute inset-0 bg-gradient-to-r from-secondary/10 to-background/30" />
+          <div className="absolute inset-0" />
 
         </div>
 

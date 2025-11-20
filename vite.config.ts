@@ -8,6 +8,9 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    // headers:{
+    //    "Cache-Control": "public, max-age=86400"
+    // }
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
