@@ -41,13 +41,13 @@ const Cart = () => {
           <Button
             variant="ghost"
             onClick={() => navigate('/menu')}
-            className="mb-6"
+            className="mb-6 text-muted hover:text-secondary"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
             Continue Shopping
           </Button>
 
-          <h1 className="text-4xl font-bold mb-8">Shopping Cart</h1>
+          <h1 className="text-4xl font-bold mb-8 text-muted">Shopping Cart</h1>
 
           <div className="grid gap-8 lg:grid-cols-3">
             <div className="lg:col-span-2 space-y-4">
@@ -137,7 +137,7 @@ const Cart = () => {
 
                   <Button 
                     onClick={() => navigate('/checkout')}
-                    className="w-full"
+                    className="w-full bg-background"
                     size="lg"
                   >
                     Proceed to Checkout

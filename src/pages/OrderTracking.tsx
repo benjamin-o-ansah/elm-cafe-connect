@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
-import { CheckCircle2, Clock, Package, Bike, MapPin } from 'lucide-react';
+import { CheckCircle2, Clock, Package, Bike, MapPin, Timer } from 'lucide-react';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
@@ -209,8 +209,8 @@ const OrderTracking = () => {
       <main className="container mx-auto px-4 py-24">
         <div className="max-w-5xl mx-auto">
           <div className="mb-8">
-            <h1 className="text-4xl font-bold mb-2">Track Your Order</h1>
-            <p className="text-muted-foreground">Order ID: {order.id}</p>
+            <h1 className="text-4xl font-bold mb-2 text-muted">Track Your Order</h1>
+            <p className="text-muted">Order ID: {order.id}</p>
           </div>
 
           <div className="grid gap-8 lg:grid-cols-3">
@@ -260,13 +260,40 @@ const OrderTracking = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <Alert className="mb-4">
-                    <Clock className="h-4 w-4" />
-                    <AlertTitle>Estimated Arrival</AlertTitle>
-                    <AlertDescription>
-                      Your order will arrive in approximately {order.estimatedTime}
-                    </AlertDescription>
-                  </Alert>
+                 
+                  {/* <Alert className="group mb-4">
+  <Timer 
+    className="h-4 w-4 text-muted group-hover:text-muted"
+  />
+  <AlertTitle className="text-muted">Estimated Arrival</AlertTitle>
+  <AlertDescription className="text-muted">
+    Your order will arrive in approximately {order.estimatedTime}
+  </AlertDescription>
+</Alert> */}
+
+<div 
+className="bg-background border border-border rounded-md p-4 mb-4"
+style={{
+
+  display: 'flex',flexDirection:'column',justifyContent:'start',
+ 
+}}>
+  <div style={{
+    display:'flex',
+    gap:'10px',
+  }}>
+<Timer 
+    className="h-4 w-4 text-muted group-hover:text-muted"
+  />
+  <AlertTitle className="text-muted ">Estimated Arrival</AlertTitle>
+  </div>
+ 
+  <AlertDescription className="text-muted" style={{
+    marginLeft:'25px'
+  }}>
+    Your order will arrive in approximately {order.estimatedTime}
+  </AlertDescription>
+</div>
 
                   <div ref={mapContainer} className="h-[400px] rounded-lg mb-4" />
 

@@ -62,12 +62,12 @@ const Checkout = () => {
       <Navigation />
       <main className="container mx-auto px-4 py-24">
         <div className="max-w-4xl mx-auto">
-          <Button variant="ghost" onClick={() => navigate("/cart")} className="mb-6">
+          <Button variant="ghost" onClick={() => navigate("/cart")} className="mb-6 text-muted">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Cart
           </Button>
 
-          <h1 className="text-4xl font-bold mb-8">Checkout</h1>
+          <h1 className="text-4xl font-bold mb-8 text-muted">Checkout</h1>
 
           <form onSubmit={handleSubmit}>
             <div className="grid gap-8 lg:grid-cols-3">
@@ -79,23 +79,23 @@ const Checkout = () => {
                   </CardHeader>
                   <CardContent>
                     <RadioGroup value={orderType} onValueChange={(value: any) => setOrderType(value)}>
-                      <div className="flex items-center space-x-2 p-4 border rounded-lg cursor-pointer hover:bg-accent">
+                      <div className="flex items-center space-x-2 p-4 border rounded-lg cursor-pointer text-primary hover:bg-background hover:text-muted">
                         <RadioGroupItem value="delivery" id="delivery" />
-                        <Label htmlFor="delivery" className="flex items-center cursor-pointer flex-1">
+                        <Label htmlFor="delivery" className="flex items-center cursor-pointer flex-1 hover:text-muted">
                           <MapPin className="mr-2 h-5 w-5" />
                           <div>
                             <p className="font-medium">Delivery</p>
-                            <p className="text-sm text-muted-foreground">Delivered to your location (GHS 20.00)</p>
+                            <p className="text-sm text-muted-foreground hover:text-muted">Delivered to your location (GHS 20.00)</p>
                           </div>
                         </Label>
                       </div>
-                      <div className="flex items-center space-x-2 p-4 border rounded-lg cursor-pointer hover:bg-accent">
+                      <div className="flex items-center space-x-2 p-4 border rounded-lg cursor-pointer text-primary hover:bg-background hover:text-muted">
                         <RadioGroupItem value="pickup" id="pickup" />
                         <Label htmlFor="pickup" className="flex items-center cursor-pointer flex-1">
                           <Store className="mr-2 h-5 w-5" />
                           <div>
                             <p className="font-medium">In-Store Pickup</p>
-                            <p className="text-sm text-muted-foreground">Collect from restaurant (Free)</p>
+                            <p className="text-sm text-muted-foreground hover:text-muted">Collect from restaurant (Free)</p>
                           </div>
                         </Label>
                       </div>
@@ -115,14 +115,14 @@ const Checkout = () => {
                         <Input
                           id="address"
                           placeholder="Enter your delivery address"
-                          className="placeholder:text-primary-foreground text-primary-foreground"
+                          className="placeholder:text-primary-foreground text-muted"
                           required
                         />
                       </div>
                       <div className="grid grid-cols-2 gap-4">
                         <div className="space-y-2">
                           <Label htmlFor="city">City</Label>
-                          <Input id="city" placeholder="Accra" required />
+                          <Input id="city" placeholder="Accra" required className="placeholder:text-primary-foreground text-muted"/>
                         </div>
                         <div className="space-y-2">
                           <Label htmlFor="phone">Phone Number</Label>
@@ -131,14 +131,14 @@ const Checkout = () => {
                             type="tel"
                             placeholder="+233..."
                             required
-                            className="placeholder:text-primary-foreground text-primary-foreground"
+                            className="placeholder:text-primary-foreground text-muted"
                           />
                         </div>
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="instructions">Delivery Instructions (Optional)</Label>
                         <Textarea
-                          className="placeholder:text-primary-foreground text-primary-foreground"
+                          className="placeholder:text-primary-foreground text-muted"
                           id="instructions"
                           placeholder="Add any special instructions for delivery..."
                           rows={3}
@@ -165,7 +165,8 @@ const Checkout = () => {
                         <Input
                           id="firstName"
                           required
-                          className="placeholder:text-primary-foreground text-primary-foreground"
+                          placeholder="first name"
+                          className="placeholder:text-muted text-sm text-muted"
                         />
                       </div>
                       <div className="space-y-2">
@@ -173,7 +174,8 @@ const Checkout = () => {
                         <Input
                           id="lastName"
                           required
-                          className="placeholder:text-primary-foreground text-primary-foreground"
+                          placeholder="last name"
+                          className="placeholder:text-primary-foreground text-sm text-muted"
                         />
                       </div>
                     </div>
@@ -182,8 +184,9 @@ const Checkout = () => {
                       <Input
                         id="email"
                         type="email"
+                        placeholder="email"
                         required
-                        className="placeholder:text-primary-foreground text-primary-foreground"
+                        className="placeholder:text-primary-foreground text-muted text-sm "
                       />
                     </div>
                   </CardContent>
@@ -191,44 +194,64 @@ const Checkout = () => {
 
                 {/* Payment Method */}
                 <Card>
-                  <CardHeader>
-                    <CardTitle>Payment Method</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <RadioGroup value={paymentMethod} onValueChange={(value: any) => setPaymentMethod(value)}>
-                      <div className="flex items-center space-x-2 p-4 border rounded-lg cursor-pointer hover:bg-accent">
-                        <RadioGroupItem value="stripe" id="stripe" />
-                        <Label htmlFor="stripe" className="flex items-center cursor-pointer flex-1">
-                          <CreditCard className="mr-2 h-5 w-5" />
-                          <div>
-                            <p className="font-medium">Credit/Debit Card</p>
-                            <p className="text-sm text-muted-foreground">Pay securely with Stripe</p>
-                          </div>
-                        </Label>
-                      </div>
-                      <div className="flex items-center space-x-2 p-4 border rounded-lg cursor-pointer hover:bg-accent">
-                        <RadioGroupItem value="mobile-money" id="mobile-money" />
-                        <Label htmlFor="mobile-money" className="flex items-center cursor-pointer flex-1">
-                          <Wallet className="mr-2 h-5 w-5" />
-                          <div>
-                            <p className="font-medium">Mobile Money</p>
-                            <p className="text-sm text-muted-foreground">MTN, Vodafone, AirtelTigo</p>
-                          </div>
-                        </Label>
-                      </div>
-                      <div className="flex items-center space-x-2 p-4 border rounded-lg cursor-pointer hover:bg-accent">
-                        <RadioGroupItem value="cash" id="cash" />
-                        <Label htmlFor="cash" className="flex items-center cursor-pointer flex-1">
-                          <Banknote className="mr-2 h-5 w-5" />
-                          <div>
-                            <p className="font-medium">Cash on Delivery</p>
-                            <p className="text-sm text-muted-foreground">Pay when order arrives</p>
-                          </div>
-                        </Label>
-                      </div>
-                    </RadioGroup>
-                  </CardContent>
-                </Card>
+  <CardHeader>
+    <CardTitle>Payment Method</CardTitle>
+  </CardHeader>
+
+  <CardContent>
+    <RadioGroup value={paymentMethod} onValueChange={(value: any) => setPaymentMethod(value)}>
+      
+      {/* STRIPE */}
+      <div className="group flex items-center space-x-2 p-4 border rounded-lg cursor-pointer hover:bg-secondary">
+        <RadioGroupItem value="stripe" id="stripe" />
+
+        <Label
+          htmlFor="stripe"
+          className="flex items-center cursor-pointer flex-1 group-hover:text-muted"
+        >
+          <CreditCard className="mr-2 h-5 w-5 group-hover:text-muted" />
+          <div>
+            <p className="font-medium group-hover:text-muted">Credit/Debit Card</p>
+            <p className="text-sm text-muted-foreground group-hover:text-muted">Pay securely with Stripe</p>
+          </div>
+        </Label>
+      </div>
+
+      {/* MOBILE MONEY */}
+      <div className="group flex items-center space-x-2 p-4 border rounded-lg cursor-pointer hover:bg-secondary">
+        <RadioGroupItem value="mobile-money" id="mobile-money" />
+
+        <Label
+          htmlFor="mobile-money"
+          className="flex items-center cursor-pointer flex-1 group-hover:text-muted"
+        >
+          <Wallet className="mr-2 h-5 w-5 group-hover:text-muted" />
+          <div>
+            <p className="font-medium group-hover:text-muted">Mobile Money</p>
+            <p className="text-sm text-muted-foreground group-hover:text-muted">MTN, Vodafone, AirtelTigo</p>
+          </div>
+        </Label>
+      </div>
+
+      {/* CASH */}
+      <div className="group flex items-center space-x-2 p-4 border rounded-lg cursor-pointer hover:bg-secondary">
+        <RadioGroupItem value="cash" id="cash" />
+
+        <Label
+          htmlFor="cash"
+          className="flex items-center cursor-pointer flex-1 group-hover:text-muted"
+        >
+          <Banknote className="mr-2 h-5 w-5 group-hover:text-muted" />
+          <div>
+            <p className="font-medium group-hover:text-muted">Cash on Delivery</p>
+            <p className="text-sm text-muted-foreground group-hover:text-muted">Pay when order arrives</p>
+          </div>
+        </Label>
+      </div>
+    </RadioGroup>
+  </CardContent>
+</Card>
+
               </div>
 
               {/* Order Summary */}
@@ -269,7 +292,7 @@ const Checkout = () => {
                       <span>GHS {finalTotal.toFixed(2)}</span>
                     </div>
 
-                    <Button type="submit" className="w-full mt-6" size="lg" disabled={isSubmitting}>
+                    <Button type="submit" className="w-full mt-6 bg-background" size="lg" disabled={isSubmitting}>
                       {isSubmitting ? "Processing..." : "Place Order"}
                     </Button>
 

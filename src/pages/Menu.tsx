@@ -1011,7 +1011,7 @@ const Menu = () => {
       {totalItems > 0 && (
         <Button
           onClick={() => navigate('/cart')}
-          className="fixed bottom-8 right-8 z-50 h-16 w-16 rounded-full shadow-lg animate-scale-in"
+          className="fixed bottom-20 right-5 z-50 h-16 w-16 rounded-full shadow-lg animate-scale-in"
           size="icon"
         >
           <ShoppingCart className="h-6 w-6" />
@@ -1147,7 +1147,7 @@ const Menu = () => {
                     });
                   }}
                   size="sm"
-                  className="w-full gap-2"
+                  className="w-full gap-2 bg-background hover:"
                 >
                   <Plus className="h-4 w-4" />
                   Add to Cart
