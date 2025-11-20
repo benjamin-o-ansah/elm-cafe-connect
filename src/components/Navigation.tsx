@@ -5,6 +5,14 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import logo from "@/assets/elm-cafe-logo.png";
 import elegantBg from "@/assets/bg-img.png";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,15 +21,18 @@ const Navigation = () => {
     { name: "Home", path: "/" },
     { name: "Menu", path: "/menu" },
     { name: "Reservations", path: "/reservations" },
-    { name: "Promotions", path: "/promotions" },
-    { name: "Gift Cards", path: "/gift-cards" },
     { name: "Gallery", path: "/gallery" },
-    { name: "Chef's Corner", path: "/chefs-corner" },
     { name: "Blog", path: "/blog" },
     { name: "Events", path: "/events" },
-    { name: "Loyalty & Reviews", path: "/loyalty" },
     { name: "About", path: "/about" },
     { name: "Contact", path: "/contact" },
+  ];
+
+  const moreLinks = [
+    { name: "Promotions", path: "/promotions" },
+    { name: "Gift Cards", path: "/gift-cards" },
+    { name: "Chef's Corner", path: "/chefs-corner" },
+    { name: "Loyalty & Reviews", path: "/loyalty" },
   ];
 
   return (
@@ -53,11 +64,44 @@ const Navigation = () => {
                 {link.name}
               </Link>
             ))}
+            
+            {/* More Dropdown */}
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-sm bg-transparent text-primary-foreground hover:text-accent data-[state=open]:text-accent">
+                    More
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[200px] gap-1 p-2 bg-background/95 backdrop-blur-md border border-border">
+                      {moreLinks.map((link) => (
+                        <li key={link.path}>
+                          <NavigationMenuLink asChild>
+                            <Link
+                              to={link.path}
+                              className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground text-sm"
+                            >
+                              {link.name}
+                            </Link>
+                          </NavigationMenuLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+
             <Link to="/signin">
               <Button variant="outline" size="sm" className="backdrop-blur-lg text-primary-foreground">
                 Sign In
               </Button>
             </Link>
+            {/* <Link to="/dashboard">
+              <Button variant="outline" size="sm" className="backdrop-blur-md text-primary-foreground">
+                Dashboard
+              </Button>
+            </Link> */}
             <Link to="/signup">
               <Button  variant="outline" size="sm" className="backdrop-blur-md text-primary-foreground">
                 Order Now
@@ -68,7 +112,7 @@ const Navigation = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-muted hover:text-accent transition-colors"
+            className="lg:hidden p-2 text-muted hover:text-secondary transition-colors"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -87,19 +131,34 @@ const Navigation = () => {
                 key={link.path}
                 to={link.path}
                 onClick={() => setIsOpen(false)}
-                className="text-muted hover:text-accent transition-colors py-2"
+                className="text-muted hover:text-secondary transition-colors py-2"
+              >
+                {link.name}
+              </Link>
+            ))}
+            {moreLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                onClick={() => setIsOpen(false)}
+                className="text-muted hover:text-secondary transition-colors py-2"
               >
                 {link.name}
               </Link>
             ))}
             <div className="flex flex-col gap-2 pt-2 border-t border-border">
               <Link to="/signin" onClick={() => setIsOpen(false)}>
-                <Button variant="outline" className="w-full text-primary-foreground">
+                <Button variant="outline" className="w-full text-muted hover:text-secondary">
                   Sign In
                 </Button>
               </Link>
+              {/* <Link to="/dashboard" onClick={() => setIsOpen(false)}>
+                <Button variant="outline" className="w-full text-primary-foreground">
+                  Dashboard
+                </Button> */}
+              {/* </Link> */}
               <Link to="/signup" onClick={() => setIsOpen(false)}>
-                <Button className="w-full bg-accent text-primary-foreground hover:bg-accent/90 text-accent-foreground">Order Now</Button>
+                <Button variant="outline" className="w-full text-muted hover:text-secondary">Order Now</Button>
               </Link>
             </div>
           </div>

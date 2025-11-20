@@ -36,7 +36,7 @@ const Newsletter = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="bg-background/10 backdrop-blur-sm border-primary-foreground/20 text-primary-foreground placeholder:text-white"
+            className="bg-background/10 backdrop-blur-sm border-primary-foreground/20 text-white placeholder:text-white"
           />
           <Button type="submit" variant="outline" className="bg-background text-primary-foreground hover:bg-accent">
             Subscribe

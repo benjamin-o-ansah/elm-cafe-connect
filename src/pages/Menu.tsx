@@ -1,13 +1,15 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Download, X } from "lucide-react";
+import { Download, X, ShoppingCart, Plus } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AIChatbot from "@/components/AIChatbot";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import { useCart } from "@/contexts/CartContext";
 import menuHero from "@/assets/menu-hero.jpg";
 import avocadoToast from "@/assets/menu/avocado-toast.jpg";
 import classicBreakfast from "@/assets/menu/classic-breakfast.jpg";
@@ -21,6 +23,8 @@ import bgVideo from "@/assets/burger.mp4";
 import elegantBg from "@/assets/bg-img.png";
 const Menu = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const { addItem, totalItems } = useCart();
+  const navigate = useNavigate();
   const [selectedDietary, setSelectedDietary] = useState<string[]>([]);
   const [selectedItem, setSelectedItem] = useState<any>(null);
 
@@ -1003,6 +1007,20 @@ const Menu = () => {
       />
       <Navigation />
 
+      {/* Floating Cart Button */}
+      {totalItems > 0 && (
+        <Button
+          onClick={() => navigate('/cart')}
+          className="fixed bottom-8 right-8 z-50 h-16 w-16 rounded-full shadow-lg animate-scale-in"
+          size="icon"
+        >
+          <ShoppingCart className="h-6 w-6" />
+          <span className="absolute -top-2 -right-2 h-6 w-6 rounded-full bg-destructive text-destructive-foreground text-xs flex items-center justify-center font-bold">
+            {totalItems}
+          </span>
+        </Button>
+      )}
+
       {/* Hero Section */}
       <section className="relative h-[800px] flex items-center justify-center overflow-hidden mt-16">
          <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
@@ -1105,15 +1123,35 @@ const Menu = () => {
                   <span className="text-lg font-bold text-secondary">GHS {item.price}</span>
                 </div>
                 <p className="text-muted-foreground mb-4 line-clamp-2">{item.description}</p>
-                {item.dietary.length > 0 && (
-                  <div className="flex flex-wrap gap-2">
-                    {item.dietary.map((tag) => (
+                {/* Badge area with fixed height for uniform alignment */}
+                <div className="flex flex-wrap gap-2 mb-4 min-h-[28px]">
+                  {item.dietary.length > 0 ? (
+                    item.dietary.map((tag) => (
                       <Badge key={tag} variant="default" className="text-xs">
                         {tag}
                       </Badge>
-                    ))}
-                  </div>
-                )}
+                    ))
+                  ) : (
+                    <div className="h-[28px]" />
+                  )}
+                </div>
+                <Button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    addItem({
+                      id: item.id.toString(),
+                      name: item.name,
+                      price: parseFloat(item.price),
+                      category: getCategoryDisplayName(item.category),
+                      description: item.description
+                    });
+                  }}
+                  size="sm"
+                  className="w-full gap-2"
+                >
+                  <Plus className="h-4 w-4" />
+                  Add to Cart
+                </Button>
               </CardContent>
             </Card>
           ))}
