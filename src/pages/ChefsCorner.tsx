@@ -22,7 +22,7 @@ const ChefsCorner = () => {
       name: "Chef Richard Cobbinah Johnson",
       role: "Chef de Parte",
       image: chefRichard,
-      bio: "With over 7 years of culinary excellence, Chef Kwame brings a fusion of traditional Ghanaian flavors and contemporary techniques to Elm Café. Born in Kumasi and trained at Le Cordon Bleu Paris, he returned to Ghana with a mission to elevate local cuisine to international standards.",
+      bio: "With over 7 years of culinary excellence, Chef Richard Cobbinah Johnson brings a fusion of traditional Ghanaian flavors and contemporary techniques to Elm Café. Born in Kumasi and trained at Le Cordon Bleu Paris, he returned to Ghana with a mission to elevate local cuisine to international standards.",
       specialty: "Contemporary African Cuisine",
       philosophy: "Food is not just sustenance; it's a bridge between cultures, generations, and memories. I believe in honoring our rich Ghanaian heritage while embracing modern culinary innovations. Every dish tells a story of the land, the farmers, and the traditions that shaped it.",
       signature: "Heritage Jollof Rice with Grilled Prawns",
@@ -72,7 +72,7 @@ const ChefsCorner = () => {
   const signatureDishes = [
     {
       name: "Heritage Jollof Rice",
-      story: "This dish represents Chef Kwame's journey from his grandmother's kitchen to Le Cordon Bleu and back home. It's traditional jollof reimagined with premium ingredients and modern techniques, while respecting the soul of the original.",
+      story: "This dish represents Chef Richard's journey from his grandmother's kitchen to Le Cordon Bleu and back home. It's traditional jollof reimagined with premium ingredients and modern techniques, while respecting the soul of the original.",
       ingredients: [
         { name: "Long-grain rice", origin: "Sourced from Volta Region rice farmers" },
         { name: "Fresh tomatoes & peppers", origin: "Organic produce from Akuapem Hills" },
@@ -119,7 +119,7 @@ const ChefsCorner = () => {
 
   const recipes = [
     {
-      title: "Chef Kwame's Perfect Jollof at Home",
+      title: "Chef Richard's Perfect Jollof at Home",
       difficulty: "Intermediate",
       time: "45 minutes",
       keyTechnique: "The secret is in the tomato base. Blend your tomatoes, peppers, and onions, then fry the mixture until the oil separates and the color deepens to a rich red. This process, called 'frying your base,' is what gives jollof its signature flavor.",
