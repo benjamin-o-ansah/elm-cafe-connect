@@ -8,7 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 131 87.1% 12.2%;
+    --background: 172.8 100% 9.8%;
     --foreground: 20 50% 10%;
 
     --card: 0 0% 100%;
@@ -40,11 +40,11 @@ All colors MUST be HSL.
 
     --radius: 0.75rem;
 
-    --gradient-hero: linear-gradient(135deg, hsl(20 50% 10% / 0.8), hsl(20 40% 20% / 0.9));
+    --gradient-hero: linear-gradient(135deg, hsl(172.8 100% 9.8% / 0.8), hsl(20 40% 20% / 0.9));
     --gradient-card: linear-gradient(180deg, hsl(36 67% 97%), hsl(30 25% 92%));
     
-    --shadow-soft: 0 4px 20px hsl(20 50% 10% / 0.08);
-    --shadow-medium: 0 8px 30px hsl(20 50% 10% / 0.12);
+    --shadow-soft: 0 4px 20px hsl(172.8 100% 9.8% / 0.08);
+    --shadow-medium: 0 8px 30px hsl(172.8 100% 9.8% / 0.12);
     
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }

@@ -77,7 +77,7 @@ const Index = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 container  mx-auto px-4">
+      <section className="py-5 container  mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in-up bg-red">
           <h2 className="text-4xl font-bold text-primary-foreground mb-4">Why Choose Elm Cafe ?</h2>
           <p className="text-primary-foreground text-lg max-w-2xl mx-auto">
@@ -105,7 +105,7 @@ const Index = () => {
       </section>
 
       {/* Locations Section */}
-      <section className="py-20 bg-muted">
+      <section className="py-5 bg-muted">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-primary mb-4">Visit Us</h2>
@@ -154,7 +154,7 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 container mx-auto px-4">
+      <section className="py-5 container mx-auto px-4">
         <div className="bg-gradient-to-r rounded-2xl p-12 text-center">
           <Coffee className="h-16 w-16 text-primary-foreground mx-auto mb-6" />
           <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">Ready to Experience Elm Cafe?</h2>

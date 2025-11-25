@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Minus, Plus, Trash2, ShoppingBag, ArrowLeft } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
+import elegantBg from "@/assets/bg-img.png";
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -15,6 +16,10 @@ const Cart = () => {
   if (items.length === 0) {
     return (
       <div className="min-h-screen bg-background">
+        <div
+                className="fixed inset-0 opacity-5 pointer-events-none"
+                style={{ backgroundImage: `url(${elegantBg})`, backgroundSize: "cover", backgroundAttachment: "fixed" }}
+              />
         <Navigation />
         <main className="container mx-auto px-4 py-24">
           <div className="max-w-2xl mx-auto text-center py-16">
@@ -35,6 +40,10 @@ const Cart = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <div
+              className="fixed inset-0 opacity-5 pointer-events-none"
+              style={{ backgroundImage: `url(${elegantBg})`, backgroundSize: "cover", backgroundAttachment: "fixed" }}
+            />
       <Navigation />
       <main className="container mx-auto px-4 py-24">
         <div className="max-w-4xl mx-auto">

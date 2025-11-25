@@ -9,6 +9,7 @@ import { CheckCircle2, Package, Bike, MapPin, Timer } from 'lucide-react';
 import { AlertDescription, AlertTitle } from '@/components/ui/alert';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import elegantBg from "@/assets/bg-img.png";
 
 // Mapbox access token
 mapboxgl.accessToken = 'pk.eyJ1IjoicmljaGFyZGt1bWxhbyIsImEiOiJjbWk2ZGppdGwxYTcyMmpzMGZ5ejJhNm5tIn0.ZDgKdjHMQ8RIH1myDsy3hg';
@@ -205,6 +206,10 @@ const OrderTracking = () => {
 
   return (
     <div className="min-h-screen bg-background">
+       <div
+                      className="fixed inset-0 opacity-5 pointer-events-none"
+                      style={{ backgroundImage: `url(${elegantBg})`, backgroundSize: "cover", backgroundAttachment: "fixed" }}
+                    />
       <Navigation />
       <main className="container mx-auto px-4 py-24">
         <div className="max-w-5xl mx-auto">
