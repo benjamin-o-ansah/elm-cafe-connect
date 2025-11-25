@@ -2235,7 +2235,7 @@ const Menu = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background relative overflow-x-hidden">
+    <div className="min-h-screen bg-background relative overflow-x-hidden" id="menu">
       <div
         className="fixed inset-0 opacity-5 pointer-events-none"
         style={{ backgroundImage: `url(${elegantBg})`, backgroundSize: "cover", backgroundAttachment: "fixed" }}
@@ -2285,7 +2285,7 @@ const Menu = () => {
       </section>
 
       {/* Menu Content */}
-      <section className="py-16 container mx-auto px-4">
+      <section className="py-16 container mt-auto px-4">
         
         {/* 👇 CATEGORY FILTER REPLACED WITH SELECT DROPDOWN */}
         <div className="flex justify-center mb-8 animate-fade-in-up">
@@ -2402,13 +2402,15 @@ const Menu = () => {
           </div>
         )}
 
-        {/* CTA */}
-        <div className="text-center mt-16 animate-fade-in-up">
-          <p className="text-muted-foreground mb-4">Ready to order?</p>
-          <Button size="lg" className="bg-accent hover:bg-accent/90 text-white hover:scale-105 transition-all duration-300">
+        {/* CTA
+        <div className="text-center mt-20 animate-fade-in-up">
+          <p className="text-muted mb-4">Ready to order?</p>
+          <Button 
+          onClick={() => navigate("/menu")}
+          size="lg" className="bg-accent hover:bg-accent/90 text-muted hover:scale-105 transition-all duration-300">
             Order Online
           </Button>
-        </div>
+        </div> */}
       </section>
 
       {/* Item Detail Modal */}
