@@ -31,9 +31,9 @@ const ContentManagement = () => {
     <div className="space-y-4 sm:space-y-6">
       <Tabs defaultValue="blog" className="w-full">
         <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3">
-          <TabsTrigger value="blog" className="text-xs sm:text-sm">Blog Posts</TabsTrigger>
-          <TabsTrigger value="promotions" className="text-xs sm:text-sm">Promotions</TabsTrigger>
-          <TabsTrigger value="gallery" className="text-xs sm:text-sm">Gallery</TabsTrigger>
+          <TabsTrigger value="blog" className="text-xs sm:text-sm text-primary data-[state=active]:text-primary-foreground">Blog Posts</TabsTrigger>
+          <TabsTrigger value="promotions" className="text-xs sm:text-sm text-primary data-[state=active]:text-primary-foreground">Promotions</TabsTrigger>
+          <TabsTrigger value="gallery" className="text-xs sm:text-sm text-primary data-[state=active]:text-primary-foreground">Gallery</TabsTrigger>
         </TabsList>
 
         <TabsContent value="blog" className="mt-4">

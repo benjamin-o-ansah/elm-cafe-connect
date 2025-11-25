@@ -11,52 +11,57 @@ import ContentManagement from "@/components/admin/ContentManagement";
 import EventsManagement from "@/components/admin/EventsManagement";
 import AnalyticsDashboard from "@/components/admin/AnalyticsDashboard";
 import SiteSettings from "@/components/admin/SiteSettings";
+import elegantBg from "@/assets/bg-img.png";
 
 const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState("overview");
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+        <div
+              className="fixed inset-0 opacity-5 pointer-events-none"
+              style={{ backgroundImage: `url(${elegantBg})`, backgroundSize: "cover", backgroundAttachment: "fixed" }}
+            />
       <Navigation />
       
       <main className="flex-1 container mx-auto px-4 py-8 mt-20">
         <div className="max-w-7xl mx-auto">
           <div className="mb-6 sm:mb-8">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2 text-foreground">Admin Dashboard</h1>
-            <p className="text-sm sm:text-base text-muted-foreground">Manage your restaurant and website content</p>
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2 text-muted">Admin Dashboard</h1>
+            <p className="text-sm sm:text-base text-muted">Manage your restaurant and website content</p>
           </div>
 
           <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-4 sm:space-y-6">
-            <TabsList className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-1 sm:gap-2 h-auto p-1 sm:p-2 bg-muted/50 w-full">
-              <TabsTrigger value="overview" className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm px-2 sm:px-3">
+            <TabsList className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-1 sm:gap-2 h-auto p-1 sm:p-2 bg-muted/10 w-full">
+              <TabsTrigger value="overview" className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm px-2 sm:px-3 text-muted data-[state=active]:text-primary-foreground">
                 <LayoutDashboard className="h-3 w-3 sm:h-4 sm:w-4" />
                 <span>Overview</span>
               </TabsTrigger>
-              <TabsTrigger value="menu" className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm px-2 sm:px-3">
+              <TabsTrigger value="menu" className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm px-2 sm:px-3 text-muted data-[state=active]:text-primary-foreground">
                 <UtensilsCrossed className="h-3 w-3 sm:h-4 sm:w-4" />
                 <span>Menu</span>
               </TabsTrigger>
-              <TabsTrigger value="orders" className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm px-2 sm:px-3">
+              <TabsTrigger value="orders" className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm px-2 sm:px-3 text-muted data-[state=active]:text-primary-foreground">
                 <ShoppingBag className="h-3 w-3 sm:h-4 sm:w-4" />
                 <span>Orders</span>
               </TabsTrigger>
-              <TabsTrigger value="users" className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm px-2 sm:px-3">
+              <TabsTrigger value="users" className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm px-2 sm:px-3 text-muted data-[state=active]:text-primary-foreground">
                 <Users className="h-3 w-3 sm:h-4 sm:w-4" />
                 <span>Users</span>
               </TabsTrigger>
-              <TabsTrigger value="content" className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm px-2 sm:px-3">
+              <TabsTrigger value="content" className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm px-2 sm:px-3 text-muted data-[state=active]:text-primary-foreground">
                 <FileText className="h-3 w-3 sm:h-4 sm:w-4" />
                 <span>Content</span>
               </TabsTrigger>
-              <TabsTrigger value="events" className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm px-2 sm:px-3">
+              <TabsTrigger value="events" className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm px-2 sm:px-3 text-muted data-[state=active]:text-primary-foreground">
                 <Calendar className="h-3 w-3 sm:h-4 sm:w-4" />
                 <span>Events</span>
               </TabsTrigger>
-              <TabsTrigger value="analytics" className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm px-2 sm:px-3">
+              <TabsTrigger value="analytics" className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm px-2 sm:px-3 text-muted data-[state=active]:text-primary-foreground">
                 <TrendingUp className="h-3 w-3 sm:h-4 sm:w-4" />
                 <span>Analytics</span>
               </TabsTrigger>
-              <TabsTrigger value="settings" className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm px-2 sm:px-3">
+              <TabsTrigger value="settings" className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm px-2 sm:px-3 text-muted data-[state=active]:text-primary-foreground">
                 <Settings className="h-3 w-3 sm:h-4 sm:w-4" />
                 <span>Settings</span>
               </TabsTrigger>

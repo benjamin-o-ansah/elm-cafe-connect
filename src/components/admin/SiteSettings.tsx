@@ -26,16 +26,17 @@ const SiteSettings = () => {
         <CardContent className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="siteName">Site Name</Label>
-            <Input id="siteName" defaultValue="Elm CafeGh" />
+            <Input id="siteName" defaultValue="Elm Cafe" className="text-muted placeholder:text-muted" />
           </div>
           <div className="space-y-2">
             <Label htmlFor="tagline">Tagline</Label>
-            <Input id="tagline" defaultValue="Redefining dining experiences" />
+            <Input id="tagline" defaultValue="Redefining dining experiences" className="text-muted placeholder:text-muted" />
           </div>
           <div className="space-y-2">
             <Label htmlFor="description">Description</Label>
             <Textarea
               id="description"
+              className="text-muted placeholder:text-muted"
               defaultValue="A distinctive restaurant-cafe in Accra focused on quality, sustainability, and local ingredients."
               rows={3}
             />
@@ -52,11 +53,11 @@ const SiteSettings = () => {
         <CardContent className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="phone">Phone Number</Label>
-            <Input id="phone" type="tel" defaultValue="+233 24 123 4567" />
+            <Input id="phone" type="tel" defaultValue="+233 24 123 4567" className="text-muted placeholder:text-muted"/>
           </div>
           <div className="space-y-2">
             <Label htmlFor="email">Email Address</Label>
-            <Input id="email" type="email" defaultValue="info@elmcafe.com" />
+            <Input id="email" type="email" defaultValue="info@elmcafe.com" className="text-muted placeholder:text-muted"/>
           </div>
           <div className="space-y-2">
             <Label htmlFor="address">Address</Label>
@@ -64,6 +65,7 @@ const SiteSettings = () => {
               id="address"
               defaultValue="Lennox Mall, Accra & Embassy Gardens"
               rows={2}
+              className="text-muted placeholder:text-muted"
             />
           </div>
           <Button onClick={handleSave} className="w-full sm:w-auto">Save Changes</Button>
@@ -81,7 +83,7 @@ const SiteSettings = () => {
               <p className="font-medium text-sm sm:text-base">Online Ordering</p>
               <p className="text-xs sm:text-sm text-muted-foreground">Enable/disable online ordering</p>
             </div>
-            <Switch defaultChecked />
+            <Switch className="text-background bg-primary" defaultChecked />
           </div>
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 py-2">
             <div>

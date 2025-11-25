@@ -85,7 +85,7 @@ const OrderManagement = () => {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <CardTitle className="text-lg sm:text-xl">Order Management</CardTitle>
             <Select value={filter} onValueChange={setFilter}>
-              <SelectTrigger className="w-full sm:w-[180px]">
+              <SelectTrigger className="w-full sm:w-[180px] text-muted">
                 <SelectValue placeholder="Filter orders" />
               </SelectTrigger>
               <SelectContent>
@@ -126,7 +126,7 @@ const OrderManagement = () => {
                       defaultValue={order.status}
                       onValueChange={(value) => handleStatusChange(order.id, value)}
                     >
-                      <SelectTrigger className="w-full sm:w-[150px]">
+                      <SelectTrigger className="w-full sm:w-[150px] text-muted">
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>

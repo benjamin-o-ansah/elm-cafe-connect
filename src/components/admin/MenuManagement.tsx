@@ -57,18 +57,18 @@ const MenuManagement = () => {
             </DialogTrigger>
             <DialogContent className="max-w-md sm:max-w-lg max-h-[90vh] overflow-y-auto">
               <DialogHeader>
-                <DialogTitle>Add New Menu Item</DialogTitle>
+                <DialogTitle className="text-muted">Add New Menu Item</DialogTitle>
               </DialogHeader>
               <div className="space-y-4 py-4">
                 <div className="space-y-2">
-                  <Label htmlFor="name">Item Name</Label>
-                  <Input id="name" placeholder="e.g., Classic Breakfast" />
+                  <Label htmlFor="name" className="text-muted">Item Name</Label>
+                  <Input id="name" placeholder="e.g., Classic Breakfast" className="placeholder:text-muted text-muted" />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="category">Category</Label>
+                  <Label htmlFor="category" className="text-muted">Category</Label>
                   <Select>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select category" />
+                    <SelectTrigger className="text-muted">
+                      <SelectValue placeholder="Select category" className="placeholder:text-muted text-muted" />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="breakfast">Breakfast</SelectItem>
@@ -79,22 +79,22 @@ const MenuManagement = () => {
                   </Select>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="price">Price (GHS)</Label>
-                  <Input id="price" type="number" placeholder="0.00" />
+                  <Label htmlFor="price" className="text-muted">Price (GHS)</Label>
+                  <Input id="price" type="number" placeholder="0.00" className="placeholder:text-muted text-muted"/>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="description">Description</Label>
-                  <Textarea id="description" placeholder="Item description..." />
+                  <Label htmlFor="description" className="text-muted">Description</Label>
+                  <Textarea id="description" placeholder="Item description..." className="placeholder:text-muted text-muted"/>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="badge">Badge (Optional)</Label>
-                  <Input id="badge" placeholder="e.g., Popular, Chef's Special" />
+                  <Label htmlFor="badge" className="text-muted">Badge (Optional)</Label>
+                  <Input id="badge" placeholder="e.g., Popular, Chef's Special" className="placeholder:text-muted text-muted"/>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="status">Status</Label>
-                  <Select defaultValue="active">
-                    <SelectTrigger>
-                      <SelectValue />
+                  <Label htmlFor="status" className="text-muted">Status</Label>
+                  <Select defaultValue="active" >
+                    <SelectTrigger className="text-muted">
+                      <SelectValue className="placeholder:text-muted text-muted" />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="active">Active</SelectItem>
@@ -102,7 +102,7 @@ const MenuManagement = () => {
                     </SelectContent>
                   </Select>
                 </div>
-                <Button onClick={handleAddItem} className="w-full">Add Item</Button>
+                <Button onClick={handleAddItem} className="w-full bg-secondary hover:text-muted">Add Item</Button>
               </div>
             </DialogContent>
           </Dialog>
@@ -111,12 +111,12 @@ const MenuManagement = () => {
           {/* Search */}
           <div className="mb-4">
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted" />
               <Input
                 placeholder="Search menu items..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10"
+                className="pl-10 placeholder:text-muted text-muted"
               />
             </div>
           </div>
