@@ -77,7 +77,7 @@ const Index = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-5 container  mx-auto px-4">
+      <section className="py-10 container  mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in-up bg-red">
           <h2 className="text-4xl font-bold text-primary-foreground mb-4">Why Choose Elm Cafe ?</h2>
           <p className="text-primary-foreground text-lg max-w-2xl mx-auto">
