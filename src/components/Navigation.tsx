@@ -36,7 +36,7 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background backdrop-blur-md border-border relative">
+    <nav className="sticky top-0 left-0 right-0 z-50 bg-background backdrop-blur-md border-border relative">
        <div
     className="absolute inset-0 opacity-10 pointer-events-none"
     style={{
